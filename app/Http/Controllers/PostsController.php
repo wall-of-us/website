@@ -7,6 +7,7 @@ use App\SocialAccountService;
 use Socialite;
 use App\Post;
 use App\Action;
+use Cviebrock\EloquentSluggable\Sluggable;
 
 class PostsController extends Controller
 {
@@ -22,7 +23,8 @@ class PostsController extends Controller
 		}
 	public function about()
 		{
-			return view('posts.about');
+			$post = 'About';
+			return view('posts.about', compact('post'));
 		}
 	public function actions()
 		{
@@ -38,17 +40,35 @@ class PostsController extends Controller
 			
 			return view('posts.actions', compact('posts', 'archive'), ['title' => $pageType]);
 		}
+	public function archive()
+		{
+			$pageType = "Weekly Acts";
+			$posts = Post::orderBy('week', 'DESC')->orderBy('action', 'asc')->get();
+			
+			
+			$count = Post::count();
+			$skip = 4;
+			$limit = $count - $skip; // the limit
+     		$counter = 0;
+
+			$archive = Post::orderBy('week', 'DESC')->orderBy('action', 'asc')->skip($skip)->take($limit)->get();
+			// $archive = Post::orderBy('week', 'DESC')->orderBy('action', 'asc')->get();
+			
+			return view('posts.archive', compact('posts', 'archive', 'counter'), ['title' => $pageType]);
+		}
 	public function show(Post $post)
 		{
 			$pageType = "Weekly Acts";
-			$next = Post::where('id', '>', $post->id)->first();
-			$previous = Post::where('id', '<', $post->id)->orderBy('id','desc')->first();
+			
 			
 			if (\Auth::check()) {
 				$user = \Auth::user()->id;
 				$actions = Action::where('post_id', '=', $post->id)->where('user_id', '=', $user);
 			}
-			 
+			
+			$next = Post::where('action', '>', $post->action)->where('week', '=', $post->week)->first();
+			$previous = Post::where('action', '<', $post->action)->where('week', '=', $post->week)->orderBy('action','desc')->first();
+			
 			
 			return view('posts.show', compact('post', 'next', 'previous', 'actions'), ['title' => $pageType]);
 		}

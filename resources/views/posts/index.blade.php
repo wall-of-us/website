@@ -15,6 +15,7 @@
             <h3 class="sub-title">he promised a wall.</h3><span class="title">he will be stopped by a wall of us.</span>
             <p class="intro">FOUR CONCRETE ACTS OF RESISTANCE
 				DELIVERED TO YOUR INBOX EACH WEEK</p>
+				<br />
 			@if (Auth::check())
             <p><a class="btn btn-cta btn-cta-secondary" href="/actions">Take Action</a></p>   
 			@else
@@ -26,8 +27,8 @@
     
     <div class="sections-wrapper">   
     <!-- ******BLOG LIST****** --> 
-	<section id="why" class="section why">
-		<div class="container"  style="max-width:800px;">
+	<section id="why" class="section why" style="padding-top: 80px; padding-bottom: 60px;">
+		<div class="container" style="padding-right: 40px; padding-left: 40px;">
             <h2 class="intro" style="text-align:left;">4 WEEKLY ACTS OF RESISTANCE</h2>
 			
             <div class="row">

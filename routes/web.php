@@ -19,11 +19,13 @@ Route::get('/actions', 'PostsController@actions');
 
 Route::post('/actions', 'PostsController@actionTaken');
 
+Route::get('/archive', 'PostsController@archive');
+
 Route::get('/posts/create', 'PostsController@create');
 
 Route::post('/posts', 'PostsController@store');
 
-Route::get('/posts/{post}', 'PostsController@show');
+Route::get('/posts/{post}/{slug}', 'PostsController@show');
 
 Route::get('/signup', 'RegistrationController@create');
 
@@ -37,11 +39,9 @@ Route::get('/logout', 'SessionsController@destroy');
 
 Route::get('/profile', 'ProfileController@index');
 
-Route::post('/profile', 'ProfileController@updatePicture');
-
 Route::get('/edit', 'ProfileController@create');
 
-Route::post('/edit', 'ProfileController@store');
+Route::post('/profile', 'ProfileController@store');
 
 Route::get('/profile/{user}', 'ProfileController@show');
 

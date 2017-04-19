@@ -9,6 +9,7 @@ use App\User;
 use Auth;
 use App\Post;
 use Image;
+use App\Action;
 
 class ProfileController extends Controller
 {
@@ -16,15 +17,26 @@ class ProfileController extends Controller
     {
     	$user = User::all();
         $posts = Post::orderBy('week', 'DESC')->orderBy('action', 'asc')->take(4)->get();
-            
+        $userid = \Auth::user()->id;
+        $membersince = \Auth::user()->created_at;
+
+        $actions = \DB::table('actions')->where('user_id', '=', $userid)->get();
+        $action_count = $actions->count();   
+
+        $one_week_ago = \Carbon\Carbon::now()->subWeeks(1);
+        $newactions = \DB::table('actions')->where('user_id', '=', $userid)->where('created_at', '>=', $one_week_ago)->get();
+        $newaction_count = $newactions->count();   
         
-    	return view('sessions.profile', compact('user', 'posts', 'archive'));
+    	return view('sessions.profile', compact('user', 'posts', 'archive', 'action_count', 'newaction_count', 'membersince'));
     }
     public function show($id)
     {
     	$user = User::find($id);
 
-    	return view('sessions.profile', compact('user'));
+        $actions = DB::table('actions')->where('user_id', '=', $userid)->get();
+        $action_count = $actions->count();
+
+    	return view('sessions.profile', compact('user', 'action_count'));
     }
     public function create()
     {
@@ -83,7 +95,8 @@ class ProfileController extends Controller
 
             $user = Auth::user();
             $user->save();
-            return view('sessions.profile', compact('user'));
+            //return view('sessions.profile', compact('user'));
+            return redirect('/profile');
             
 
             

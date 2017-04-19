@@ -1,19 +1,28 @@
-@extends ('layouts.logins')
+@extends ('layouts.profile')
 
 @section ('content')
 
 
+<div class="bg-slider-wrapper">
+        <div class="flexslider bg-slider">
+            <ul class="slides">
+                <li style="background: url('https://s3-us-west-1.amazonaws.com/wallofus/IMG_0132.JPG') no-repeat 50% top; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;" class="slide slide-1" ></li>
+                
+            </ul>
+        </div>
+    </div><!--//bg-slider-wrapper-->   
 
 
+<!-- ******Login Section****** --> 
         <!-- ******Login Section****** --> 
-        <section class="login-section access-section section">
+        <section class="profile-section access-section section">
             <div class="container">
                 <div class="row">
                     <div class="form-box col-md-offset-2 col-sm-offset-0 xs-offset-0 col-xs-12 col-md-8">     
                         <div class="form-box-inner">
-                            <h2 class="title text-center">Log in</h2>                 
+                            <h2 class="title text-center">Log In</h2>                  
                             <div class="row">
-                                <div class="form-container col-xs-12 col-md-5">
+                                <div class="form-container col-xs-12 col-md-5 col-centered">
                                     <form class="login-form" method="POST" action="/login"> 
 										{{ csrf_field() }}										
                                         <div class="form-group email">

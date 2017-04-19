@@ -5,12 +5,12 @@
 
 <head>
     
-    <title>Action {{ $post->action }}: {{ $post->title }} -- wall-of-us</title>
+    <title>About Us -- wall-of-us</title>
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{ $post->shortbody }}">
+    <meta name="description" content="Our mission is to make it simply irresistible for Americans to become active participants in rebuilding our democracy.">
     <meta name="author" content="wall-of-us">    
 	<script src="https://use.typekit.net/oht7xro.js"></script>
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
@@ -61,12 +61,10 @@
 						<!--<li class="nav-item"><a href="/bricks">Brick-by-brick</a></li>-->
                         <li class="nav-item"><a href="/about">About Us</a></li>
 						@if (Auth::check())
-						
-                        <li class="nav-item"><a href="/profile"><img src="/uploads/users/{{ Auth::user()->picture }}" alt="Alternate Text" class="user-tiny" />&nbsp;
-                            @if ($flash = session('message')){{ $flash }}@endif {{ Auth::user()->name }}
-                        </a>
-                        </li>
-
+    						<li class="nav-item"><a href="/profile"><img src="/uploads/users/{{ Auth::user()->picture }}" alt="Alternate Text" class="user-tiny" />&nbsp;
+                                @if ($flash = session('message')){{ $flash }}@endif {{ Auth::user()->name }}
+                            </a>
+                            </li>
 						@else 
 							<li class="nav-item"><a href="/login">Log in</a></li>
 							<li class="nav-item"><a class="" href="/signup">Sign Up</a></li>

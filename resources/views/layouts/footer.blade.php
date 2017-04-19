@@ -1,7 +1,7 @@
 <!-- ******FOOTER****** --> 
     <footer class="footer">
         <div class="footer-content">
-            <div class="container"  style="max-width:800px;">
+            <div class="container">
                 <div class="row">                    
                     <div class="footer-col links col-md-2 col-sm-4 col-xs-12 sm-break">
                         <div class="footer-col-inner">
@@ -27,6 +27,7 @@
                             <ul class="social list-inline">
                                 <li><a href="https://twitter.com/1beautifulwall" target="_blank"><i class="fa fa-twitter"></i></a></li>
                                 <li><a href="https://www.facebook.com/1beautifulwall/"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://github.com/wall-of-us"><i class="fa fa-github"></i></a></li>
 								<li><a href="mailto:contact@wall-of-us.org"><i class="fa fa-envelope"></i></a></li> 
                                 <!--<li><a href="mailto:contact@wall-of-us.org"><i class="fa fa-medium"></i></a></li> -->
                             </ul>

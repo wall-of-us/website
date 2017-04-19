@@ -2,7 +2,7 @@ f
 /* ======= Base ======= */
 body {
   font-family: 'Europa', sans-serif;
-  color: #444;
+  color: #1f1f1f;
   font-size: 16px;
 
 }
@@ -42,7 +42,7 @@ a.btn .fa {
 }
 .btn .fa-dark,
 a.btn .fa-dark {
-  color: #000;
+  color: #1f1f1f;
   margin-right: 5px;
 }
 a.btn-cta,
@@ -69,8 +69,9 @@ a.btn-cta-secondary,
 }
 a.btn-cta-secondary:hover,
 .btn-cta-secondary:hover {
-  border: 2px solid #ccc;
-  color: #ccc;
+  background: #eee;
+  border: 2px solid #eee;
+  color: #333;
 }
 .btn-cta-secondary:visited,
 .btn-cta-secondary:visited {
@@ -88,15 +89,16 @@ a.btn-cta-body,
 }
 a.btn-cta-body:hover,
 .btn-cta-body:hover {
-  border: 2px solid #666;
-  color: #666;
+  background: #467c83;
+  border: 2px solid #467c83;
+  color: #fff;
 }
 
 .btn-cta-taken,
 .btn-cta-taken {
   background: none;
-  border: 2px solid #006600;
-  color: #006600;
+  border: 2px solid #12464d;
+  color: #12464d;
 
 }
 a.btn-ghost,
@@ -493,7 +495,7 @@ select {
   font-family: brandon-grotesque, sans-serif;
   font-style: normal;
   font-weight: 100;
-  letter-spacing: 2.2px;
+  letter-spacing: 3px;
   text-transform: uppercase;
   font-size: 25px;
 
@@ -531,9 +533,9 @@ select {
   background: #fff;
   z-index: 20;
   position: relative;
+  
 }
 .section .intro {
-  max-width: 800px;
   margin: 0 auto;
   margin-bottom: 60px;
   text-align: center;
@@ -551,19 +553,22 @@ select {
 }
 /* ======= Why ======= */
 .why {
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 
 }
 .why .title {
-  font-size: 36px;
+  font-size: 30px;
   font-weight: 300;
   margin-top: 0;
+  margin-bottom: 30px;
 }
 .why .intro {
   color: #333;
   margin-bottom: 20px;
   font-size: 18px;
+  letter-spacing: 1.5px;
+  font-weight: normal;
 }
 .why .item {
   padding: 90px 0;
@@ -1070,7 +1075,7 @@ select {
   padding-top: 25px;
   font-size: 26px;
   font-weight: bold;
-  font-family: arial, sans-serif;
+  font-family: europa, sans-serif;
   margin-bottom: 30px;
 }
 .steps .step .title .text {
@@ -1210,7 +1215,7 @@ select {
   top: -12px;
   right: 2px;
   position: relative;
-  font-family: arial, sans-serif;
+  font-family: europa, sans-serif;
   color: #666;
   font-size: 18px;
 }
@@ -1430,7 +1435,7 @@ select {
 }
 .contact-section .contact-form .error {
   color: #28a5a8;
-  font-family: arial, sans-serif;
+  font-family: europa, sans-serif;
   display: block;
   font-size: 14px;
   text-align: left;
@@ -1687,10 +1692,27 @@ select {
   position: relative;
 }
 .blog-list .post .post-thumb {
-  background: #1f1f1f;
+  
   overflow: hidden; 
-  height: 235px;
-  width: 175px;
+  height: 350px;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  background-size: cover; 
+}
+.blog-list .post .post-thumb-archive {
+
+  overflow: hidden; 
+  height: 275px;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  background-size: cover; 
+}
+
+img .post-thumb {
+  max-width: 100%;
+  max-height: 100%;
 }
 .blog-list .post .post-thumb img {
 	
@@ -1706,6 +1728,9 @@ select {
 .blog-list .post .content .post-title {
   margin-top: 0;
   font-size: 18px;
+  font-weight: normal;
+  letter-spacing: 1.5px;
+  color: #1f1f1f;
 }
 .blog-list .post .content .post-title a {
   color: #253340;
@@ -1743,6 +1768,7 @@ select {
   margin-bottom: 60px;
   position: relative;
   height: 500px;  
+  vertical-align: middle;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -1763,20 +1789,32 @@ select {
 .blog-entry-wrapper .blog-entry .blog-entry-heading .container {
   position: relative;
   z-index: 11;
-  max-width: 700px;
+  display: table-cell;
+  margin: auto;
+  vertical-align: middle;
+  width: 50%;
+  text-align: center;
   padding-left: 30px;
   padding-right: 30px;
-  padding-top: 120px;
+  padding-top: 30px;
+  padding-bottom: 80px;
+  height: 500px;
+  
 }
 .blog-entry-wrapper .blog-entry .blog-entry-heading .title {
-  margin-bottom: 30px;
+  font-family: Europa, sans-serif;
+  text-transform: lowercase;
+  letter-spacing: 3px;
+  font-weight: lighter;
   font-size: 42px;
 }
-.blog-entry-wrapper .blog-entry .blog-entry-heading .meta {
-  font-size: 18px;
+.meta {
+  font-size: 16px;
+  font-weight: lighter;
   -webkit-opacity: 0.8;
   -moz-opacity: 0.8;
   opacity: 0.8;
+  text-align: center;
 }
 .blog-entry-wrapper .blog-entry .blog-entry-heading .meta a {
   color: #fff;
@@ -1795,7 +1833,11 @@ select {
   background: rgba(0, 0, 0, 0.5);
   padding: 15px 30px;
   margin-bottom: 0;
-  font-size: 14px;
+  font-size: 18px;
+  font-family: Europa, sans-serif;
+  letter-spacing: 3px;
+  font-weight: lighter;
+  text-transform: lowercase;
 }
 .blog-entry-wrapper .blog-entry .blog-entry-heading .post-nav-top a {
   color: #fff;
@@ -1809,9 +1851,12 @@ select {
   opacity: 1;
 }
 .blog-entry-wrapper .blog-entry .blog-entry-content {
+  font-family: Europa, sans-serif;
   font-size: 18px;
   line-height: 1.6;
-  color: #666;
+  color: #1f1f1f;
+  padding: 30px;
+  
 }
 .blog-entry-wrapper .blog-entry .blog-entry-content h1,
 .blog-entry-wrapper .blog-entry .blog-entry-content h2,
@@ -1819,7 +1864,7 @@ select {
 .blog-entry-wrapper .blog-entry .blog-entry-content h4,
 .blog-entry-wrapper .blog-entry .blog-entry-content h5,
 .blog-entry-wrapper .blog-entry .blog-entry-content h6 {
-  color: #4a6781;
+  color: #1f1f1f;
 }
 .blog-entry-wrapper .blog-entry .blog-entry-content h1.section-heading,
 .blog-entry-wrapper .blog-entry .blog-entry-content h2.section-heading,
@@ -1874,11 +1919,13 @@ select {
 .blog-entry-wrapper .blog-entry .post-nav .nav-next {
   float: right;
   text-align: right;
-  max-width: 200px;
+  max-width: 300px;
+  font-size: 18px;
 }
 .blog-entry-wrapper .blog-entry .post-nav .nav-previous {
   float: left;
-  max-width: 200px;
+  max-width: 300px;
+  font-size: 18px;
 }
 .blog-entry-wrapper .blog-entry .post-nav .nav-next .fa {
   margin-left: 5px;
@@ -1889,7 +1936,7 @@ select {
 .blog-entry-wrapper .custom-quote {
   border: none;
   padding: 60px 30px;
-  font-family: 'Roboto slab', serif;
+  font-family: 'brandon-grotesque', serif;
   font-weight: 300;
   font-style: italic;
   font-size: 20px;
@@ -1903,7 +1950,7 @@ select {
   margin-right: 10px;
 }
 .blog-entry-wrapper .custom-quote .source {
-  font-family: "Roboto", sans-serif;
+  font-family: "Europa", sans-serif;
   font-style: normal;
   font-weight: normal;
   margin-bottom: 0 !important;
@@ -1951,7 +1998,7 @@ select {
 }
 .blog-page .header-blog h1.logo a .sub {
   font-family: "Europa", sans-serif;
-  color: #253340;
+  color: #1f1f1f;
   font-weight: 300;
 }
 .blog-page .header-blog .main-nav .nav .nav-item.last {
@@ -2020,7 +2067,7 @@ select {
   display: block;
   padding-top: 5px;
   font-size: 18px;
-  font-family: 'open sans', arial, sans-serif;
+  font-family: Europa, sans-serif;
   font-weight: 500;
   color: #253340;
 }
@@ -2061,7 +2108,7 @@ select {
 .story-section .belife {
   border-color: #f19180;
   padding: 15px 30px;
-  font-family: 'Roboto slab', serif;
+  font-family: 'brandon-grotesque', serif;
   font-weight: 300;
   font-style: italic;
   font-size: 20px;
@@ -2223,6 +2270,7 @@ select {
 /* ======= Profile Page ======= */
 .profile-section {
   padding-top: 90px;
+  margin-bottom: 90px;
   position: relative;
   z-index: 10;
 }
@@ -2257,7 +2305,7 @@ select {
 .profile-section .belife {
   border-color: #f19180;
   padding: 15px 30px;
-  font-family: 'Roboto slab', serif;
+  font-family: 'brandon-grotesque', serif;
   font-weight: 300;
   font-style: italic;
   font-size: 20px;
@@ -2393,8 +2441,6 @@ select {
 .access-section {
   padding-bottom: 200px;
   padding-top: 90px;
-  padding-left: 10px;
-  padding-right: 10px;
 }
 .access-section .form-box .form-box-inner {
   background: #fff;
@@ -2406,12 +2452,15 @@ select {
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
-  padding: 40px;
+  padding: 0px;
+      
 }
 .access-section .form-box .title {
   font-weight: 300;
+  color: #1f1f1f;
   margin-bottom: 60px;
   margin-top: 0;
+
 }
 .access-section.signup-section .title {
   margin-bottom: 15px;
@@ -2421,6 +2470,7 @@ select {
 }
 .access-section .form-group {
   position: relative;
+
 }
 .access-section .form-group.email:before {
   content: "\f0e0";
@@ -2742,7 +2792,7 @@ select {
   position: relative;
 }
 .profile-section .form-group.email:before {
-  content: "\f007";
+  content: "\f0e0";
   font-family: FontAwesome;
   font-style: normal;
   font-weight: normal;
@@ -3012,7 +3062,7 @@ select {
 .pagination {
   margin-bottom: 60px;
   font-size: 14px;
-  font-family: arial, sans-serif;
+  font-family: Europa, sans-serif;
   margin-left: auto;
   margin-right: auto;
 }
@@ -3087,7 +3137,7 @@ select {
 }
 .searchbox-submit {
   font-size: 14px;
-  font-family: arial, sans-serif;
+  font-family: Europa, sans-serif;
 }
 .searchbox-container {
   width: 100%;
@@ -3272,7 +3322,7 @@ select {
   border: 2px solid rgba(0, 0, 0, 0.8);
 }
 .config-panel #color-options li.active a {
-  border: 2px solid #000;
+  border: 2px solid #1f1f1f;
 }
 .config-panel #color-options li.theme-1 a {
   background: #28a5a8;
@@ -3412,6 +3462,7 @@ select {
     top: 58px;
     margin-left: -30px;
   }
+
   .why .item .title {
     margin-bottom: 30px;
     text-align: center;
@@ -3839,7 +3890,7 @@ select {
     padding: 0 15px;
     padding-bottom: 15px;
     color: #253340;
-    font-family: arial, sans-serif;
+    font-family: Europa, sans-serif;
   }
   .navbar-fixed-top .navbar-collapse {
     padding-left: 15px;
@@ -3871,7 +3922,7 @@ select {
 
 blockquote.twitter-tweet {
   display: inline-block;
-  font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
+  font-family: "Europa", Roboto, "Segoe UI", Calibri, sans-serif;
   font-size: 12px;
   font-weight: bold;
   line-height: 16px;
@@ -4020,6 +4071,10 @@ overflow: hidden;
   color: #000;
 }
 
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
 
 
 

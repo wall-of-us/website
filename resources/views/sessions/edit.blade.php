@@ -13,33 +13,57 @@
     </div><!--//bg-slider-wrapper-->   
 
         <!-- ******Login Section****** --> 
-        <section class="login-section access-section section">
+        <section class="profile-section access-section section">
             <div class="container">
                 <div class="row">
                     <div class="form-box col-md-offset-2 col-sm-offset-0 xs-offset-0 col-xs-12 col-md-8">     
                         <div class="form-box-inner">
                             <h2 class="title text-center">Update Your Profile</h2>                 
                             <div class="row">
-                                <div class="form-container col-xs-12 col-md-5">
+                                <div class="form-container col-xs-12 col-md-5 col-centered">
                                    
-
-
-
-                                        <form class="login-form" enctype="multipart/form-data" method="POST" action="/edit"> 
+                                        <form class="login-form" enctype="multipart/form-data" method="POST" action="/profile"> 
                                         {{ csrf_field() }}  
                                         <input id="id" name="id" type="hidden" value="{{ Auth::user()->id }}">
-                                        <div class="form-group picture">
-                                            <label class="sr-only" for="picture">Picture</label>
-                                            <input type="file" name="picture" id="picture" class="form-control login-picture" value="{{ Auth::user()->picture }}" placeholder="Update Profile Picture">
+                                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+                                        <img src="/uploads/users/{{ Auth::user()->picture }}"
+                                            alt="Alternate Text" class="user text-center"  id="imagedisplay" /><br><br>
+                                           
+                                        <div class="form-group">
+                                        <div style="height:0px;overflow:hidden">
+                                           <input type="file" name="picture" id="picture" value="{{ Auth::user()->picture }}" />
+                                        </div>
+                                        <a type="button" onclick="chooseFile();" style="cursor: pointer;"><i class="fa fa-upload"></i>  Upload a New Picture</a>
+
+                                        <script>
+                                           function chooseFile() {
+                                              $("#picture").click();
+                                           }
+
+                                           $(document).ready(function() {
+
+                                          $('#picture').change(function(e) {
+
+                                            var reader = new FileReader();
+                                            reader.onload = function(e) {
+                                              $('#imagedisplay').attr('src', e.target.result);
+                                            }
+                                            reader.readAsDataURL(this.files[0]);
+
+                                          });
+                                        });
+                                        </script>
+                                            
                                         </div><!--//form-group-->
                                         <div class="form-group name">
                                             <label class="sr-only" for="name">Name</label>
-                                            <input id="name" name="name" type="name" class="form-control login-name" value="{{ Auth::user()->name }}" placeholder="Add Name" required>
+                                            <input id="name" name="name" type="name" class="form-control login-name" value="{{ Auth::user()->name }}" placeholder="Add Name" autocomplete="off" required>
                                         </div><!--//form-group-->
                                         <div class="form-group email">
                                             <label class="sr-only" for="email">Email</label>
                     
-                                            <input id="email" name="email" type="email" class="form-control login-email" value="{{ Auth::user()->email }}" placeholder="Add Email" required>
+                                            <input id="email" name="email" type="email" class="form-control login-email" value="{{ Auth::user()->email }}" placeholder="Add Email" autocomplete="off" required>
                                         </div><!--//form-group-->
                                         <div class="form-group phone">
                                             <label class="sr-only" for="phone">Phone</label>
@@ -74,7 +98,7 @@
                                         
                                         
                                         @include ('layouts.errors')
-                                        <button type="submit" class="btn btn-block btn-cta-primary">Update</button>
+                                        <button type="submit" class="btn btn-block btn-cta-body">Update Profile</button>
                                         
                                           
                                     </form>

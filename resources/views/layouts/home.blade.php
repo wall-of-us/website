@@ -4,7 +4,7 @@
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
 
 <head>
-    <title>wall-of-us</title>
+    <title>wall-of-us | Home</title>
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -57,8 +57,13 @@
                         <li class="nav-item"><a href="/about">About Us</a></li>
                
 						@if (Auth::check())	
-							@include('layouts.nav')
-						@else 
+							
+                            <li class="nav-item"><a href="/profile"><img src="/uploads/users/{{ Auth::user()->picture }}" alt="Alternate Text" class="user-tiny" />&nbsp;
+                            @if ($flash = session('message')){{ $flash }}@endif {{ Auth::user()->name }}
+                            </a>
+                            </li>
+
+						    @else 
 							<li class="nav-item"><a href="/login">Log in</a></li>
 							<li class="nav-item"><a class="cta" href="/signup">Sign Up</a></li>	
                            
