@@ -27,7 +27,7 @@ deploy:
   app: wall-of-us
   env: wallOfUs-staging
   bucket_name: "wou-storage-bucket"
-  bucket_path: "applications-zips"
+  bucket_path: "ebs-apps/application-zips/"
   only_create_app_version: true
   on:
     branch: feature/travis
