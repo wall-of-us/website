@@ -2,10 +2,8 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-
 
 class User extends Authenticatable
 {
@@ -17,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'zip',
+        'name', 'email', 'facebook_id', 'picture', 'password', 'location', 'zip', 'address'
     ];
 
     /**
@@ -30,10 +28,7 @@ class User extends Authenticatable
     ];
 
 
-    public function setPasswordAttribute($password)
-    {   
-        $this->attributes['password'] = bcrypt($password);
-    }
+    
 
     
 }

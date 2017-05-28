@@ -11,6 +11,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">    
+
+    <meta property="og:url" content="https://www.wallofus.org" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Wall-of-Us" />
+    <meta property="og:description" content="FOUR CONCRETE ACTS OF RESISTANCE DELIVERED TO YOUR INBOX EACH WEEK" />
+    <meta property="og:image" content="https://s3-us-west-1.amazonaws.com/wallofus/IMG_0132.JPG" />
+
+    <script type="text/javascript">
+    if (window.location.hash && window.location.hash == '#_=_') {
+        window.location.hash = '';
+    }
+    </script>
+
+    <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=58f845f484ae8700129bcc7a&product=inline-share-buttons"></script>
+
 	<script src="https://use.typekit.net/oht7xro.js"></script>
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
     <link rel="shortcut icon" href="favicon.ico">  
@@ -58,7 +73,7 @@
                
 						@if (Auth::check())	
 							
-                            <li class="nav-item"><a href="/profile"><img src="/uploads/users/{{ Auth::user()->picture }}" alt="Alternate Text" class="user-tiny" />&nbsp;
+                            <li class="nav-item"><a href="/profile"><img src="{{ Auth::user()->picture }}" alt="Alternate Text" class="user-tiny" />&nbsp;
                             @if ($flash = session('message')){{ $flash }}@endif {{ Auth::user()->name }}
                             </a>
                             </li>
@@ -79,5 +94,6 @@
     
 	@include ('layouts.footer')
 	
+
 	</body>
 	</html> 

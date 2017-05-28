@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
-
+use Illuminate\Support\Facades\Hash;
 use App\Mail\Welcome;
 use App\SocialAccountService;
 use Socialite;
@@ -12,14 +12,21 @@ use Socialite;
 
 class RegistrationController extends Controller
 {
+	
     public function create()
 		{
-			$pageType = "Register";
-			return view('registrations.create', ['title' => $pageType]);
+			if (\Auth::check())
+		    {
+		       return redirect()->to('/profile');
+		    } else {
+				$pageType = "Register";
+				return view('registrations.create', ['title' => $pageType]);
+			}
 		}
 		
 	public function store()
 		{
+			
 			// Validate the form
 			
 			$this->validate(request(), [
@@ -36,6 +43,12 @@ class RegistrationController extends Controller
 			
 			$user = User::create(request(['name', 'email', 'zip', 'password']));
 			
+			// Encrypt their password
+			$password = $user->password;
+
+			$user->forceFill([
+            'password' => bcrypt($password),
+        	])->save();
 
 			// Sign them in
 			
@@ -49,26 +62,68 @@ class RegistrationController extends Controller
 
 			session()->flash('message', 'Welcome');
 			
-			// Redirect to the homepage
+			// Redirect to profile
 			
-			return redirect()->home();
+			return redirect('/profile');
+
+
 			
 		}
 		
-		public function redirect()
-		    {
-		        return Socialite::driver('facebook')->redirect();   
-		    }   
-
-	    public function callback(SocialAccountService $service)
+		public function redirectToProvider()
 	    {
-	        $user = $service->createOrGetUser(Socialite::driver('facebook')->user());
+	        return Socialite::driver('facebook')->redirect();
+	    }
+
+	    /**
+	     * Obtain the user information from GitHub.
+	     *
+	     * @return Response
+	     */
+	    public function handleProviderCallback()
+	    {
+	    	// Check if the user exists in the database with facebook id
+
+	        try {
+	        	$socialUser = Socialite::driver('facebook')->user();
+	        }
+
+	        catch (\Exception $e) {
+	        	return redirect('/');
+	        }
+
+	        $user = User::where('facebook_id', $socialUser->getId())->first();
+
+	        // If not create a new user
+
+	        if (!$user) {
+
+	        $facebook_id = $socialUser->getId();
+	        $name = $socialUser->getName();
+	        $email = $socialUser->getEmail();
+	        $password = Hash::make(str_random(8));
+	        $picture='http://graph.facebook.com/'.$facebook_id.'/picture';
+
+	        $user = User::create (['facebook_id' => $facebook_id, 'name' => $name, 'picture' => $picture, 'password' => $password, 'email' => $email]);
 
 
-	        $user = User::create(request(['name', 'email', 'zip', 'password']));
 
-	        auth()->login($user);
+	        // send a welcome email
 
-	        return redirect()->to('/home');
+			\Mail::to($user)->send(new Welcome($user));
+
+			// Flash message
+
+			session()->flash('message', 'Welcome');
+	        }
+
+	        // log this user in to the application
+
+	        auth()->login($user, true);
+
+			// Redirect to profile
+			
+			return redirect('/profile');
+	        // $user->token;
 	    }
 }

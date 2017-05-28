@@ -12,6 +12,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Our mission is to make it simply irresistible for Americans to become active participants in rebuilding our democracy.">
     <meta name="author" content="wall-of-us">    
+
+    <meta property="og:url" content="https://www.wallofus.org/about" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="About Wall-of-Us" />
+    <meta property="og:description" content="Our mission is to make it simply irresistible for Americans to become active participants in rebuilding our democracy" />
+    <meta property="og:image" content="https://s3-us-west-1.amazonaws.com/wallofus/IMG_0132.JPG" />
+
+    <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=58f845f484ae8700129bcc7a&product=inline-share-buttons"></script>
+
 	<script src="https://use.typekit.net/oht7xro.js"></script>
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
     <link rel="shortcut icon" href="favicon.ico">  
@@ -61,7 +70,7 @@
 						<!--<li class="nav-item"><a href="/bricks">Brick-by-brick</a></li>-->
                         <li class="nav-item"><a href="/about">About Us</a></li>
 						@if (Auth::check())
-    						<li class="nav-item"><a href="/profile"><img src="/uploads/users/{{ Auth::user()->picture }}" alt="Alternate Text" class="user-tiny" />&nbsp;
+    						<li class="nav-item"><a href="/profile"><img src="{{ Auth::user()->picture }}" alt="Alternate Text" class="user-tiny" />&nbsp;
                                 @if ($flash = session('message')){{ $flash }}@endif {{ Auth::user()->name }}
                             </a>
                             </li>

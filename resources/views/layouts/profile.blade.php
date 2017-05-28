@@ -60,7 +60,7 @@
                         <li class="nav-item"><a href="/about">About Us</a></li>
                
                         @if (Auth::check()) 
-                        <li class="nav-item"><a href="/profile"><img src="/uploads/users/{{ Auth::user()->picture }}" alt="Alternate Text" class="user-tiny" />&nbsp;
+                        <li class="nav-item"><a href="/profile"><img src="{{ Auth::user()->picture }}" alt="Alternate Text" class="user-tiny" />&nbsp;
                             @if ($flash = session('message')){{ $flash }}@endif {{ Auth::user()->name }}
                         </a>
                         </li>

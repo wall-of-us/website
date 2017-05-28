@@ -27,8 +27,8 @@
                                         <input id="id" name="id" type="hidden" value="{{ Auth::user()->id }}">
                                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-                                        <img src="/uploads/users/{{ Auth::user()->picture }}"
-                                            alt="Alternate Text" class="user text-center"  id="imagedisplay" /><br><br>
+                                        <img src="{{ Auth::user()->picture }}"
+                                            alt="Alternate Text" class="user-big text-center"  id="imagedisplay" /><br><br>
                                            
                                         <div class="form-group">
                                         <div style="height:0px;overflow:hidden">
@@ -65,31 +65,28 @@
                     
                                             <input id="email" name="email" type="email" class="form-control login-email" value="{{ Auth::user()->email }}" placeholder="Add Email" autocomplete="off" required>
                                         </div><!--//form-group-->
-                                        <div class="form-group phone">
+                                        <!--<div class="form-group phone">
                                             <label class="sr-only" for="phone">Phone</label>
                                             <input id="phone" name="phone" type="phone" class="form-control login-phone" value="{{ Auth::user()->phone }}" placeholder="Add Phone">
+                                        </div>//form-group-->
+                                        <div class="form-group address">
+                                            <label class="sr-only" for="address">Street Address</label>
+                                            <input id="address" name="address" type="address" class="form-control login-address" value="{{ Auth::user()->address }}" placeholder="Add Street Address">
                                         </div><!--//form-group-->
                                         <div class="form-group city">
                                             <label class="sr-only" for="city">City</label>
-                                            <input id="city" name="city" type="city" class="form-control login-city" value="{{ Auth::user()->city }}" placeholder="Add City" required>
+                                            <input id="city" name="city" type="city" class="form-control login-city" value="{{ Auth::user()->city }}" placeholder="Add City">
                                         </div><!--//form-group-->
                                         <div class="form-group state">
                                             <label class="sr-only" for="state">State</label>
-                                            <input id="state" name="state" type="state" class="form-control login-state" value="{{ Auth::user()->state }}" placeholder="Add State" required>
+                                            <input id="state" name="state" type="state" class="form-control login-state" value="{{ Auth::user()->state }}" placeholder="Add State">
                                         </div><!--//form-group-->
                                         <div class="form-group zip">
                                             <label class="sr-only" for="zip">Zipcode</label>
-                                            <input id="zip" name="zip" type="zip" class="form-control login-zip" value="{{ Auth::user()->zip }}" placeholder="{{ Auth::user()->zip }}" required>
+                                            <input id="zip" name="zip" type="zip" class="form-control login-zip" value="{{ Auth::user()->zip }}" placeholder="Add Zip" required>
                                         </div><!--//form-group-->
                                         
-                                        <div class="form-group facebook">
-                                            <label class="sr-only" for="facebook">Facebook</label>
-                                            <input id="facebook" name="facebook" type="facebook" class="form-control login-facebook" value="{{ Auth::user()->facebook }}" placeholder="Add Facebook URL">
-                                        </div><!--//form-group-->
-                                        <div class="form-group twitter">
-                                            <label class="sr-only" for="twitter">Twitter</label>
-                                            <input id="twitter" name="twitter" type="twitter" class="form-control login-twitter" value="{{ Auth::user()->twitter }}" placeholder="Add Twitter Handle">
-                                        </div><!--//form-group-->
+                                        
 
                                         
                                         
@@ -98,7 +95,7 @@
                                         
                                         
                                         @include ('layouts.errors')
-                                        <button type="submit" class="btn btn-block btn-cta-body">Update Profile</button>
+                                        <button type="submit" class="btn btn-block btn-cta-body">Save Profile</button>
                                         
                                           
                                     </form>

@@ -20,7 +20,9 @@
                 <div class="row">
                     <div class="form-box col-md-offset-2 col-sm-offset-0 xs-offset-0 col-xs-12 col-md-8">     
                         <div class="form-box-inner">
-                            <h2 class="title text-center">Sign Up</h2>                 
+                            <h2 class="title text-center">Sign Up</h2> 
+
+                          
                             <div class="row">
                                 <div class="form-container col-xs-12 col-md-5 col-centered">
                                     <form class="login-form" method="POST" action="/signup"> 
@@ -53,6 +55,10 @@
                                                 <input type="checkbox"> Remember me
                                             </label>
                                         </div><!--//checkbox-->
+                                        <p> <br><em>-OR-</em><br><a href="/login/facebook" class="btn facebook-btn" roll="button"><i class="fa fa-facebook"></i>Continue with Facebook</a> <br></p>
+
+                              
+
                                          <p class="lead">Already have a wall-of-us account? <br /><a class="signup-link" href="/login">Log in now</a></p>  
 										  
                                     </form>

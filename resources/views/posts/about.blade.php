@@ -75,7 +75,7 @@
 								        <div class="content">
 								            <h3 class="post-title" style="text-transform:uppercase">Colleen Chien | Data</h3>
 								            <div class="post-entry">
-								                <p>Colleen is the granddaughter of two Chinese educators who met in prison after a student protest, and is a law professor at Santa Clara University. Prior to becoming a lawyer Colleen did stints in spacecraft engineering, strategy consulting, and investigative journalism (as a Fulbright Scholar). She had the honor of serving in the Obama Administration as White House Senior Advisor on Innovation and Intellectual Property and has been named one of the 50 Most Influential People in the World in Intellectual Property and is a Silicon Valley Woman of Influence.<br><a href="mailto:colleen@wall-of-us.org" style="color: #1f1f1f;"><i class="fa fa-envelope"></i></a></p>
+								                <p>Colleen is the granddaughter of two Chinese educators who met in prison after a student protest, and is a law professor at Santa Clara University. Prior to becoming a lawyer Colleen did stints in spacecraft engineering, strategy consulting, and investigative journalism (as a Fulbright Scholar). She had the honor of serving in the Obama Administration as White House Senior Advisor on Innovation and Intellectual Property. Colleen has been named one of the 50 Most Influential People in the World in Intellectual Property and is a Silicon Valley Woman of Influence.<br><a href="mailto:colleen@wall-of-us.org" style="color: #1f1f1f;"><i class="fa fa-envelope"></i></a></p>
 												
 								            </div>
 								            
@@ -171,7 +171,38 @@
 					                    
 					           
 								</div>
-								<p class="text-center"><em>Each of our team members represent their own views and not those of their employers. In addition to our core team we rely on a network of volunteers comprised of experts in law, policy, communications, technology, and media. If you would like volunteer your skills to help build this big, beautiful wall-of-us, <a href="mailto:contact@wall-of-us.org">please reach out</a>.</em></p>
+								<p class="text-center" style="padding-left: 15px; padding-right: 15px;"><em>Each of our team members represent their own views and not those of their employers. In addition to our core team we rely on a network of volunteers comprised of experts in law, policy, communications, technology, and media. If you would like volunteer your skills to help build this big, beautiful wall-of-us, <a href="mailto:contact@wall-of-us.org">please reach out</a>.</em></p>
+							
+						</div><!--//container-->
+				     </section><!--//why-->
+
+
+				     <section id="why" class="section">
+				    	<div class="container">
+				            <div class="row  press">
+					            <div class="text-center">
+									<h3 class="title">Press</h3>
+								</div>
+					         	<div id="blog-mansonry" class="press-list">
+					            <div class="row" style="padding-bottom: 40px;">
+								    <div class="col-md-2 col-md-offset-1 press-list"><a href="http://www.mtv.com/news/2959400/mtv-news-social-justice-forecast-for-december-2-10/" target="_blank"><img src="/uploads/press/mtv.png"></a></div>
+								    <div class="col-md-2 press-list"><a href="https://www.good.is/articles/protest-websites-that-actually-help" target="_blank"><img src="/uploads/press/good.png"></a></div>
+								    <div class="col-md-2 press-list"><a href="http://www.huffingtonpost.com/entry/trump-border-wall-design-pennagroup_us_58ebe6d9e4b0ca64d9185d4a" target="_blank"><img src="/uploads/press/huffington.png"></a></div>
+								    <div class="col-md-2 press-list"><a href="http://mashable.com/2016/11/29/trump-organizing-apps-sites/#_iGZJSMu8qqV" target="_blank"><img src="/uploads/press/mashable.png"></a></div>
+								    <div class="col-md-2 press-list"><a href="http://www.sfchronicle.com/politics/article/Anti-Trump-resisters-sets-sights-on-county-11021216.php" target="_blank"><img src="/uploads/press/chronicle.png" style="padding-top: 10px;"></a></div>
+								</div>
+								<div class="row">
+								    <div class="col-md-2 col-md-offset-1 press-list"><a href="http://www.nbcnews.com/politics/elections/want-resist-trump-there-s-app-n717756" target="_blank"><img src="/uploads/press/nbc.png"></a></div>
+								    <div class="col-md-2 press-list"><a href="https://www.bustle.com/p/celebrities-are-taking-a-powerful-oath-on-inauguration-day-to-protect-the-constitution-videos-31945" target="_blank"><img src="/uploads/press/bustle.png"></a></div>
+								    <div class="col-md-2 press-list"><a href="http://college.usatoday.com/2017/02/23/political-apps-are-all-the-rage-in-trump-era/" target="_blank"><img src="/uploads/press/usatoday.png"></a></div>
+								    <div class="col-md-2 press-list"><a href="http://www.seattletimes.com/nation-world/nation-politics/trump-golf-empire-flourishes-much-to-critics-dismay/" target="_blank"><img src="/uploads/press/seattletimes.png"></a></div>
+								    <div class="col-md-2 press-list"><a href="https://www.nytimes.com/2017/03/09/us/politics/trump-golf-courses.html?_r=0" target="_blank"><img src="/uploads/press/nyt.png" style="padding-top: 25px;"></a></div>
+								</div>
+								   
+					                    
+					           
+								</div>
+								
 							
 						</div><!--//container-->
 				     </section><!--//why-->

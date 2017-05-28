@@ -17,8 +17,8 @@
 	                    
 	            </div><!--//blog-list-->  
 			</div><!--//row-->
-
-			<a href="/archive"><h2 class="intro" style="text-align:left;">VIEW THE ARCHIVE <i class="fa fa-angle-right"></i></h2></a>
+			<a class="btn btn-cta btn-cta-body" href="/archive">VIEW THE ARCHIVE <i class="fa fa-angle-right" style="color: #1f1f1f;"></i></a>
+			
 		</div><!--//container-->
      </section><!--//why-->  	
 </div><!--//section-wrapper-->

@@ -6,12 +6,22 @@
 <head>
     
     <title>Action {{ $post->action }}: {{ $post->title }} -- wall-of-us</title>
+    
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{ $post->shortbody }}">
-    <meta name="author" content="wall-of-us">    
+    <meta name="author" content="wall-of-us"> 
+
+    <meta property="og:url" content="{{ $url }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Action {{ $post->action }}: {{ $post->title }}" />
+    <meta property="og:description" content="{{ $post->shortbody }}" />
+    <meta property="og:image" content="https://www.wallofus.org/uploads/posts/{{ $post->image }}" />
+
+    <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=58f845f484ae8700129bcc7a&product=inline-share-buttons"></script>
+
 	<script src="https://use.typekit.net/oht7xro.js"></script>
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
     <link rel="shortcut icon" href="favicon.ico">  
@@ -37,7 +47,8 @@
 </head> 
 
 
-<body class="blog-page blog-page-single">    
+<body class="blog-page blog-page-single">
+  
     <div class="wrapper">
         <!-- ******HEADER****** --> 
         <header id="header" class="header header-blog">  
@@ -62,7 +73,7 @@
                         <li class="nav-item"><a href="/about">About Us</a></li>
 						@if (Auth::check())
 						
-                        <li class="nav-item"><a href="/profile"><img src="/uploads/users/{{ Auth::user()->picture }}" alt="Alternate Text" class="user-tiny" />&nbsp;
+                        <li class="nav-item"><a href="/profile"><img src="{{ Auth::user()->picture }}" alt="Alternate Text" class="user-tiny" />&nbsp;
                             @if ($flash = session('message')){{ $flash }}@endif {{ Auth::user()->name }}
                         </a>
                         </li>

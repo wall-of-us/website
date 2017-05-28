@@ -17,9 +17,9 @@
 				DELIVERED TO YOUR INBOX EACH WEEK</p>
 				<br />
 			@if (Auth::check())
-            <p><a class="btn btn-cta btn-cta-secondary" href="/actions">Take Action</a></p>   
+            <p><a class="btn btn-cta btn-cta-home" href="/actions">Take Action</a></p>   
 			@else
-			<p><a class="btn btn-cta btn-cta-secondary" href="/signup">Sign Up Now</a></p>
+			<p><a class="btn btn-cta btn-cta-home" href="/signup">Sign Up Now</a></p>
 			@endif
             
         </div><!--//container-->

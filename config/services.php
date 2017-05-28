@@ -36,9 +36,9 @@ return [
     ],
 
     'facebook' => [
-        'client_id' => '437101253293846',
-        'client_secret' => '9112957a02e95e0bde430b889ed032ab',
-        'redirect' => 'http://wall.dev',
+        'client_id' => env('FACEBOOK_CLIENT_ID'),
+        'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
+        'redirect' => env('CALLBACK_URL'),
     ],
 
 ];
