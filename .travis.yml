@@ -22,7 +22,7 @@ before_install:
 # debugging stuff for cli
 before_deploy:
   - pip install --user awscli
-  - aws s3 cp .travis.yml s3://wou-storage-bucket/ebs-apps/application-zips/travis.test
+  - aws s3 cp .travis.yml s3://wou-storage-bucket/ebs-apps/application-zips/newtravis.test
   
 
 deploy:
