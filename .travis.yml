@@ -1,3 +1,5 @@
+# found pieces of this gist at https://gist.github.com/gilbitron/5cac0ac5fa07e9b354ac
+
 language: php
 php:
 - '7.0'
