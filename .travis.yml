@@ -8,7 +8,6 @@ env:
 language: php
 php:
 - '7.0'
-- '7.1'
 
 before_script:
   - cp .env.travis .env
@@ -27,8 +26,8 @@ deploy:
   region: us-west-2  
   app: wall-of-us
   env: wallOfUs-staging
-  bucket_name: wou-storage-bucket
-  bucket_path: applications-zips
+  bucket_name: "wou-storage-bucket"
+  bucket_path: "applications-zips"
   only_create_app_version: true
   on:
     branch: feature/travis
