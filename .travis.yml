@@ -20,4 +20,16 @@ before_script:
 before_install:
   - mysql -e 'CREATE DATABASE wou_testing;'
 
+deploy:
+  provider: elasticbeanstalk
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  region: us-west-2  
+  app: wall-of-us
+  env: wallOfUs-staging
+  bucket_name: wou-storage-bucket
+  bucket_path: applications-zips
+  only_create_app_version: true
+  
+
  
