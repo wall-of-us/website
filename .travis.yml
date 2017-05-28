@@ -30,6 +30,8 @@ deploy:
   bucket_name: wou-storage-bucket
   bucket_path: applications-zips
   only_create_app_version: true
-  
+  on:
+    branch: feature/travis
+    
 
  
