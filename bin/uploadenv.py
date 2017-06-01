@@ -3,7 +3,6 @@
 import argparse
 import boto3
 import sys
-import pdb
 
 
 parser = argparse.ArgumentParser(description='Upload environment to dynamoDBs.')
@@ -17,7 +16,6 @@ parser.add_argument('--profile',
 args = parser.parse_args()
 
 
-#pdb.set_trace()
 data = args.env_file.read()
 if None == args.profile:
     client = boto3.client('dynamodb')
