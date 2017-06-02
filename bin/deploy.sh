@@ -16,6 +16,9 @@ s3_cp_command="aws s3 cp /tmp/${zip_file_name} s3://wou-storage-bucket/${s3_file
 echo "copying to s3://wou-storage-bucket/${s3_file_path}"
 eval ${s3_cp_command}
 
+echo displaying last 5 entries
+git reflog -5
+echo done
 # send to sns topic to publish
 last_log_message=`git reflog -1 | sed 's/^.*: //'`
 message="${s3_file_path}:${current_branch}:${last_log_message}"
