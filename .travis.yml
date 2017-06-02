@@ -7,7 +7,7 @@ env:
 
 language: php
 php:
-- '7.0'
+  - '7.0'
 
 before_script:
   - cp .env.travis .env
@@ -25,7 +25,6 @@ deploy:
   script: bin/deploy.sh
   on:
     branch: feature/travis
-
 
 deploy:
   provider: script
