@@ -21,15 +21,13 @@ before_install:
 
 # remove feature/travis after merged in with develop
 deploy:
-  provider: script
-  script: bin/deploy.sh
-  on:
+  - provider: script
+    script: bin/deploy.sh
+    on:
     branch: feature/travis
-
-deploy:
-  provider: script
-  script: bin/deploy.sh
-  on:
+  - provider: script
+    script: bin/deploy.sh
+    on:
     branch: develop
 
   
