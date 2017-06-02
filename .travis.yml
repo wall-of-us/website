@@ -19,9 +19,19 @@ before_script:
 before_install:
   - mysql -e 'CREATE DATABASE wou_testing;'
 
-# debugging stuff for cli
-#before_deploy:
-#  - pip install --user awscli
+# remove feature/travis after merged in with develop
+deploy:
+  provider: script
+  script: bin/deploy.sh
+  on:
+    branch: feature/travis
+
+
+deploy:
+  provider: script
+  script: bin/deploy.sh
+  on:
+    branch: develop
 
   
 
