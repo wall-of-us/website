@@ -20,7 +20,8 @@ before_install:
   - mysql -e 'CREATE DATABASE wou_testing;'
 
 before_deploy:
-  - pip install awscli
+  - pip install --user awscli
+  - export PATH=$PATH:$HOME/.local/bin
   
 # remove feature/travis after merged in with develop
 deploy:
