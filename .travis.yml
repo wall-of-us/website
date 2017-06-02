@@ -24,11 +24,11 @@ deploy:
   - provider: script
     script: bin/deploy.sh
     on:
-    branch: feature/travis
+      branch: feature/travis
   - provider: script
     script: bin/deploy.sh
     on:
-    branch: develop
+      branch: develop
 
   
 
