@@ -35,6 +35,12 @@ class PostsController extends Controller
 			$post = 'Privacy';
 			return view('posts.privacy', compact('post'));
 		}
+
+	public function ceos()
+		{
+			$post = 'CEOs';
+			return view('actions.ceo', compact('post'));
+		}
 	public function actions()
 		{
 			$pageType = "Weekly Acts";
@@ -127,12 +133,47 @@ class PostsController extends Controller
 				$call_script_9 = 'I am calling to express my deep disappointment in Senator ';
 				$call_script_10 = ' for his/her lack of response to Trump&#8217;s firing of FBI Director Comey. Their lack of response on this key issue reflects how little they cares about our democratic values. Is the Senator planning on making a statement soon? As his/her constituent, I am calling to ask him/her to:<br><br>1) Support an Independent Investigation. Bipartisan senators including John McCain have been advocating for this for months. In light of Donald Trump&#8217;s interference with an active FBI investigation I hope that the Senator joins these leaders in the Senate.<br><br>2) Publicly ask the DOJ to appoint a Special Counsel.  I understand that decision to appoint rests with the DOJ, but the senate can stop all senate business as well as block all judicial and DOJ nominees until such a special counsel is appointed. Will they commit to doing that? This is now a matter of protecting our democracy and national security. When will they respond to this constitutional crisis?';
 			    }
+			    
+			    $zip = substr($user_zip, 0, 5);
+        
+        		$getlocation = "http://ziptasticapi.com/" . $zip;
+			    
+		        $client = new Client();
+		        $location = $client->request('GET', $getlocation);
+		        $location = json_decode($location->getBody(), true);
+		        $city = $location['city'];
+		        $state = $location['state'];
+		        
+		        
+
+		        $governor = \DB::table('governors')->where('state', '=', $state)->orWhere('st', '=', $state)->first();
+		        if ($governor != "") {
+		        $governor_slug = $governor->slug;
+		        $positions = \DB::table('governors_positions')->where('slug', '=', $governor_slug)->where('issue', '=', 'climate')->first();
+		        }
+			    
+			    
+			    
+			    //dd($positions);
+			    $url3 = "https://www.googleapis.com/civicinfo/v2/representatives?address=" . $clean_address . $user_city . $user_state . $user_zip . "&levels=country&roles=legislatorLowerBody&key=". $_ENV['CIVIC_API_KEY'];
+		        $client = new Client();
+		        $response3 = $client->request('GET', $url3);
+		        $response3 = json_decode($response3->getBody(), true);
+		        
+		        //then set the variables
+		        if (isset($response3['officials'])) {
+		        $rep = $response3['officials'][0]['name'];
+		        $rep_phone = $response3['officials'][0]['phones'][0];
+		        $rep_slug = str_slug($response3['officials'][0]['name']);
+		        
+			    }
 			    }
 			  }
-		        
+		       
 			
-			return view('posts.show', compact('post', 'next', 'previous', 'actions', 'url', 'response', 'id', 'statement_1', 'statement_2', 'position_1', 'position_2', 'senator_1', 'senator_2', 'call_script_1', 'call_script_2', 'call_script_3', 'call_script_4', 'call_script_5', 'call_script_6', 'call_script_7', 'call_script_8', 'call_script_9', 'call_script_10'), ['title' => $pageType]);
+			return view('posts.show', compact('post', 'next', 'previous', 'actions', 'url', 'response', 'id', 'statement_1', 'statement_2', 'position_1', 'position_2', 'senator_1', 'senator_2', 'call_script_1', 'call_script_2', 'call_script_3', 'call_script_4', 'call_script_5', 'call_script_6', 'call_script_7', 'call_script_8', 'call_script_9', 'call_script_10', 'governor', 'governor_phone', 'rep', 'rep_phone', 'rep_slug', 'positions'), ['title' => $pageType]);
 		}
+
 	public function create()
 		{
 			$pageType = "Publish a Post";

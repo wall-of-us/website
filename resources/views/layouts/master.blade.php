@@ -6,7 +6,7 @@
 <head>
     
     <title>Action {{ $post->action }}: {{ $post->title }} -- wall-of-us</title>
-    
+    <base href="https://www.wallofus.org/" />
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +18,7 @@
     <meta property="og:type" content="article" />
     <meta property="og:title" content="Action {{ $post->action }}: {{ $post->title }}" />
     <meta property="og:description" content="{{ $post->shortbody }}" />
-    <meta property="og:image" content="https://www.wallofus.org/uploads/posts/{{ $post->image }}" />
+    <meta property="og:image" content="https://s3-us-west-1.amazonaws.com/wallofus/posts/{{ $post->image }}" />
 
     <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=58f845f484ae8700129bcc7a&product=inline-share-buttons"></script>
 
