@@ -19,6 +19,8 @@ Route::get('/about', 'PostsController@about');
 
 Route::get('/privacy', 'PostsController@privacy');
 
+Route::get('/ceos', 'PostsController@ceos');
+
 Route::get('/actions', 'PostsController@actions');
 
 Route::post('/actions', 'PostsController@actionTaken');
@@ -37,6 +39,8 @@ Route::get('/reps', 'RepsController@index');
 
 Route::get('/house', 'RepsController@all');
 
+Route::get('/governors', 'RepsController@governors');
+
 Route::get('/reps/create', 'RepsController@create');
 
 Route::get('/reps/profile/{id}', 'RepsController@rep');
@@ -44,6 +48,8 @@ Route::get('/reps/profile/{id}', 'RepsController@rep');
 Route::get('/house/{name}', 'RepsController@house');
 
 Route::get('/reps/{name}', 'RepsController@rep');
+
+Route::get('/governors/{name}', 'RepsController@governor');
 
 
 

@@ -53,6 +53,18 @@ return [
             'engine' => null,
         ],
 
+        'testing' => [
+            'driver'    => 'mysql',
+            'host'      => env('DB_TEST_HOST', 'localhost'),
+            'database'  => env('DB_TEST_DATABASE', 'wou_testing'),
+            'username'  => env('DB_TEST_USERNAME', 'wou_testing'),
+            'password'  => env('DB_TEST_PASSWORD', 'wou_test1ng'),
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
+            'strict'    => false,
+        ],
+
         'pgsql' => [
             'driver' => 'pgsql',
             'host' => env('DB_HOST', '127.0.0.1'),

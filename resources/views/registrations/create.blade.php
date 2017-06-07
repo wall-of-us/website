@@ -36,7 +36,7 @@
                                             <input id="email" name="email" type="email" class="form-control login-email" placeholder="Email" required>
                                         </div><!--//form-group-->
                                         <div class="form-group zip">
-                                            <label class="sr-only" for="zip">Zipcode</label>
+                                            <label class="sr-only" for="zip">Zip Code</label>
                                             <input id="zip" name="zip" type="zip" class="form-control login-zip" placeholder="Zipcode" required>
                                         </div><!--//form-group-->
                                         <div class="form-group password">

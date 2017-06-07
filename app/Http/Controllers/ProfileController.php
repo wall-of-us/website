@@ -30,12 +30,29 @@ class ProfileController extends Controller
         $clean_address = str_replace(array('#','.'), '', $user_address);
             
             
-        $url = "https://www.googleapis.com/civicinfo/v2/representatives?address=" . $clean_address . $user_city . $user_state . $user_zip . "&levels=country&levels=administrativeArea1&roles=legislatorUpperBody&roles=legislatorLowerBody&roles=headOfGovernment&key=". $_ENV['CIVIC_API_KEY'];
+        $url = "https://www.googleapis.com/civicinfo/v2/representatives?address=" . $clean_address . $user_city . $user_state . $user_zip . "&includeOffices=true&key=". $_ENV['CIVIC_API_KEY'];
 
         $client = new Client();
         $response = $client->request('GET', $url);
         $response = json_decode($response->getBody(), true);
         //dd($response);
+        $zip = substr($user_zip, 0, 5);
+        
+        $getlocation = "http://ziptasticapi.com/" . $zip;
+        
+        $client = new Client();
+        $location = $client->request('GET', $getlocation);
+        $location = json_decode($location->getBody(), true);
+      
+        $city = $location['city'];
+        $state = $location['state'];
+        
+        
+
+        $governor = \DB::table('governors')->where('state', '=', $state)->orWhere('st', '=', $state)->first();
+        if ($governor != "") {
+        $governor_slug = $governor->slug;
+        }
        
         if (isset($response['officials'][3]['name'])) {
         $positions = \DB::table('positions')->where('member', '=', $response['officials'][3]['name'])->get();
@@ -55,12 +72,12 @@ class ProfileController extends Controller
         $action_count = $actions->count();   
 
         $one_week_ago = \Carbon\Carbon::now()->subWeeks(1);
-        $newactions = \DB::table('actions')->where('user_id', '=', $userid)->where('created_at', '>=', $one_week_ago)->get();
+        $newactions = \DB::table('actions')->where('user_id', '=', $userid)->where('created_at', '>=', '2017-06-04 12:00:00')->get();
         $newaction_count = $newactions->count();   
         $leftthisweek = 4 - $newaction_count;
         $counter = 0;
         
-        return view('sessions.profile', compact('user', 'response', 'action_count', 'newaction_count', 'membersince', 'leftthisweek', 'positions', 'counter', 'profile_url'));
+        return view('sessions.profile', compact('user', 'response', 'action_count', 'newaction_count', 'membersince', 'leftthisweek', 'positions', 'counter', 'profile_url', 'governor_slug'));
     
     }
     public function show($id)

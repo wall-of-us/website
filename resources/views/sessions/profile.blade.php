@@ -79,6 +79,7 @@
                             @foreach ($res['officialIndices'] as $i)
                             <?php $counter++; ?>
                                 @if ($res['name'] != "President of the United States")
+                                @if ($res['name'] != "Vice-President of the United States")
                                 
                                 @if ($counter % 3 == 1)
                                 <div class="row text-center"  style="padding-bottom: 30px;">
@@ -129,6 +130,11 @@
                                      @if(strpos($res['name'], 'United States House of Representatives') !== false)
                                      <p><a href="/house/{{ str_slug($response['officials'][$i]['name']) }}">View full profile ></a></p>
                                      @endif
+                                     @if ($res['name'] == "Governor")
+                                     @if(isset($governor_slug)) 
+                                     <p><a href="/governors/{{ $governor_slug }}">View full profile ></a></p>
+                                     @endif
+                                     @endif
                                     
                                     @if(isset($response['officials'][$i]['channels']))
                                     @foreach ($response['officials'][$i]['channels'] as $channel)
@@ -145,7 +151,7 @@
                                 </div>
                                 @endif
 
-                                
+                                @endif
                                 @endif
 
                             @endforeach

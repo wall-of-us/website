@@ -61,6 +61,29 @@ class RepsController extends Controller
         
     }
 
+    public function governors()
+    {
+        if (\Auth::check()) {
+            $user = User::all();
+            
+            // pull represetivive data through HTTP
+            $user_address = \Auth::user()->address;
+            $user_city = \Auth::user()->city;
+            $user_state = \Auth::user()->state;
+            $user_zip = \Auth::user()->zip;
+        }
+
+        $response = \DB::table('governors')->get();
+        
+        
+
+        $counter = 0;
+        $reps = 'governors';
+        
+        return view('reps.governors', compact('user', 'response', 'counter', 'reps'));
+        
+    }
+
      /**
      * Display a listing of the resource.
      *
@@ -139,6 +162,36 @@ class RepsController extends Controller
         
         
         return view('reps.profile', compact('user', 'member', 'counter', 'funders', 'statements', 'positions', 'role'));
+        
+    }
+         /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function governor($id)
+    {
+        if (\Auth::check()) {
+            $user = User::all();
+            
+            // pull represetivive data through HTTP
+            $user_address = \Auth::user()->address;
+            $user_city = \Auth::user()->city;
+            $user_state = \Auth::user()->state;
+            $user_zip = \Auth::user()->zip;
+        }
+
+        $member = \DB::table('governors')->where('slug', '=', $id)->first();
+        $role = "Governors";
+        
+        
+
+        $statements = \DB::table('statements')->where('prop_id', '=', $id)->get();
+        $positions = \DB::table('governors_positions')->where('slug', '=', $id)->get();
+        
+        
+        
+        return view('reps.governor', compact('user', 'member', 'counter', 'funders', 'statements', 'positions', 'role'));
         
     }
 
