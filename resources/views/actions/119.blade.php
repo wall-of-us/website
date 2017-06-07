@@ -18,7 +18,7 @@
           
           <td>
           <!-- Trigger the modal with a button -->
-              <button type="button" class="btn btn-body" data-toggle="modal" data-target="#myModal">See Call Info</button>
+              <button type="button" class="btn btn-body" data-toggle="modal" data-target="#myModal">Click for Script</button>
 
               <!-- Modal -->
               <div id="myModal" class="modal fade" role="dialog">
@@ -63,6 +63,6 @@
     </table>
     <p>&nbsp;&nbsp;&nbsp;&nbsp;3. Share any intel you learn about your governor by emailing <a href="contact@wall-of-us.org">contact@wall-of-us.org</a>.</p>
     @else
-      You must <a href="/login">login</a> to see the positions of your Representitives.
+      You must <a href="/login">login</a> to see the contact information for your Governor and a personalized script.
   @endif
   

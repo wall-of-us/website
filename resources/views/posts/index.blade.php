@@ -15,7 +15,7 @@
             <h3 class="sub-title">he promised a wall.</h3><span class="title">he will be stopped by a wall of us.</span>
             <p class="intro">FOUR CONCRETE ACTS OF RESISTANCE
 				DELIVERED TO YOUR INBOX EACH WEEK</p>
-				<br />
+			
 			@if (Auth::check())
             <p><a class="btn btn-cta btn-cta-home" href="/actions">Take Action</a></p>   
 			@else
