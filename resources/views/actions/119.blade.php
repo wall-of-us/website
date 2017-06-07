@@ -32,16 +32,17 @@
                     </div>
                     <div class="modal-body">
                       <p>
-                      @if ($positions->position != 'Joined state coalition to uphold the Paris Accord, accepts science, strong state record')
+                      @if (strpos($positions->position, 'Joined state coalition to uphold the Paris Accord') !== false)
+                      
+                      <p>I am calling to thank Governor {{ $governor->last_name }} for vowing to honor the Paris Agreement. As former President Barack Obama recently said, States are going to lead the way on climate change. Governor {{ $governor->last_name }}’s commitment to our planet is an example of that leadership.</p>
+                      
+                      @else
+                      
                       <p>I am calling about the Paris Agreement and Governors {{ $governor->last_name }}’s position on it. Over the past few days, Governors around the country have expressed their support for the agreement and have vowed to honor it. These Governors are fulfilling their duty to protect the environment of their states. Is Governor {{ $governor->last_name }} planning to join these leaders and express his/her support? </p>
 
                       <p>If yes, when?</p>
 
                       <p>If no, I am deeply disappointed that Governor {{ $governor->last_name }} is putting politics over planet and depriving current and future generations from clean air and water, which are basic human rights.</p>
-
-                      @else
-                      
-                      <p>I am calling to thank Governor {{ $governor->last_name }} for vowing to honor the Paris Agreement. As former President Barack Obama recently said, States are going to lead the way on climate change. Governor {{ $governor->last_name }}’s commitment to our planet is an example of that leadership.</p>
 
                       @endif</p>
                     </div>
@@ -61,7 +62,7 @@
       
       </tbody>
     </table>
-    <p>&nbsp;&nbsp;&nbsp;&nbsp;3. Share any intel you learn about your governor by emailing <a href="contact@wall-of-us.org">contact@wall-of-us.org</a>.</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;3. Share any intel you learn about your governor by emailing <a href="mailto:contact@wall-of-us.org">contact@wall-of-us.org</a>.</p>
     @else
       You must <a href="/login">login</a> to see the contact information for your Governor and a personalized script.
   @endif
