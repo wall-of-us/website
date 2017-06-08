@@ -24,12 +24,11 @@ before_deploy:
   - pip install --user awscli
   - export PATH=$PATH:$HOME/.local/bin
   
-# remove feature/travis after merged in with develop
 deploy:
   - provider: script
     script: sh bin/deploy.sh
     on:
-      branch: feature/travis
+      branch: feature/get_env_from_s3
   - provider: script
     script: sh bin/deploy.sh
     on:
