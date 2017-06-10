@@ -27,15 +27,18 @@ class ProfileController extends Controller
         $user_city = \Auth::user()->city;
         $user_state = \Auth::user()->state;
         $user_zip = \Auth::user()->zip;
-        $clean_address = str_replace(array('#','.'), '', $user_address);
+        $clean_address = str_replace(array(' ', '#','.'), '', $user_address);
+        $clean_city = str_replace(array(' ', '#','.'), '', $user_city);
             
             
-        $url = "https://www.googleapis.com/civicinfo/v2/representatives?address=" . $user_city . $user_state . $user_zip . "&includeOffices=true&key=". $_ENV['CIVIC_API_KEY'];
-
+        $url = "https://www.googleapis.com/civicinfo/v2/representatives?address=" . $clean_address . $clean_city . $user_state . $user_zip . "&includeOffices=true&key=". $_ENV['CIVIC_API_KEY'];
+        //dd($url);
         $client = new Client();
+
         $response = $client->request('GET', $url);
+
         $response = json_decode($response->getBody(), true);
-        //dd($response);
+        
         $zip = substr($user_zip, 0, 5);
         
         $getlocation = "http://ziptasticapi.com/" . $zip;
