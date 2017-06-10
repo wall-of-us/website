@@ -32,12 +32,17 @@ class ProfileController extends Controller
             
             
         $url = "https://www.googleapis.com/civicinfo/v2/representatives?address=" . $clean_address . $clean_city . $user_state . $user_zip . "&includeOffices=true&key=". $_ENV['CIVIC_API_KEY'];
-        //dd($url);
+        
         $client = new Client();
 
+        try {
         $response = $client->request('GET', $url);
-
         $response = json_decode($response->getBody(), true);
+        } catch(\Exception $e) {
+        //exception handling
+        $response = "";
+        }
+        
         
         $zip = substr($user_zip, 0, 5);
         
