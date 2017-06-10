@@ -6,7 +6,7 @@
 <head>
     
     <title>About Us -- wall-of-us</title>
-    <base href="https://www.wallofus.org/" />
+
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
