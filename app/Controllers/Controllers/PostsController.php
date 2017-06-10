@@ -101,8 +101,14 @@ class PostsController extends Controller
 		        //first find out who there reps are
 		        $url = "https://www.googleapis.com/civicinfo/v2/representatives?address=" . $clean_address . $user_city . $user_state . $user_zip . "&levels=country&roles=legislatorUpperBody&key=". $_ENV['CIVIC_API_KEY'];
 		        $client = new Client();
+		        try {
 		        $response = $client->request('GET', $url);
 		        $response = json_decode($response->getBody(), true);
+		        } catch(\Exception $e) {
+		        //exception handling
+		        $response = "";
+		        }
+		        
 		        //dd($response);
 		        //then set the variables
 		        if (isset($response['officials'])) {
@@ -157,8 +163,16 @@ class PostsController extends Controller
 			    //dd($positions);
 			    $url3 = "https://www.googleapis.com/civicinfo/v2/representatives?address=" . $clean_address . $user_city . $user_state . $user_zip . "&levels=country&roles=legislatorLowerBody&key=". $_ENV['CIVIC_API_KEY'];
 		        $client = new Client();
+
+		        try {
 		        $response3 = $client->request('GET', $url3);
 		        $response3 = json_decode($response3->getBody(), true);
+		        } catch(\Exception $e) {
+		        //exception handling
+		        $response3 = "";
+		        }
+
+		        
 		        
 		        //then set the variables
 		        if (isset($response3['officials'])) {
