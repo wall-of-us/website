@@ -102,7 +102,7 @@ class RegistrationController extends Controller
 	        $name = $socialUser->getName();
 	        $email = $socialUser->getEmail();
 	        $password = Hash::make(str_random(8));
-	        $picture='https://graph.facebook.com/'.$facebook_id.'/picture';
+	        $picture='http://graph.facebook.com/'.$facebook_id.'/picture';
 
 	        $user = User::create (['facebook_id' => $facebook_id, 'name' => $name, 'picture' => $picture, 'password' => $password, 'email' => $email]);
 
