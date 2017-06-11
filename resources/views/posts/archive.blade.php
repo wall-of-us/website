@@ -21,7 +21,7 @@
                             <div class="post-inner">
                                 <figure class="post-thumb-archive">
                                     <a href="/posts/{{ $post->id }}/{{ $post->slug }}">
-                                        <img class="img-responsive post-thumb-archive" src="/uploads/posts/{{ $post->image }}" alt="">
+                                        <img class="img-responsive post-thumb-archive" src="https://s3-us-west-1.amazonaws.com/wallofus/posts/{{ $post->image }}" alt="">
                                     </a>
                                 </figure><!--//post-thumb-->
                                 <div class="content">
