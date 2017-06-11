@@ -99,10 +99,16 @@ class PostsController extends Controller
 		        $clean_address = str_replace(array('#','.'), '', $user_address);
 		        
 		        //first find out who there reps are
-		        $url = "https://www.googleapis.com/civicinfo/v2/representatives?address=" . $user_city . $user_state . $user_zip . "&levels=country&roles=legislatorUpperBody&key=". $_ENV['CIVIC_API_KEY'];
+		        $url = "https://www.googleapis.com/civicinfo/v2/representatives?address=" . $clean_address . $user_city . $user_state . $user_zip . "&levels=country&roles=legislatorUpperBody&key=". $_ENV['CIVIC_API_KEY'];
 		        $client = new Client();
+		        try {
 		        $response = $client->request('GET', $url);
 		        $response = json_decode($response->getBody(), true);
+		        } catch(\Exception $e) {
+		        //exception handling
+		        $response = "";
+		        }
+		        
 		        //dd($response);
 		        //then set the variables
 		        if (isset($response['officials'])) {
@@ -139,10 +145,18 @@ class PostsController extends Controller
         		$getlocation = "http://ziptasticapi.com/" . $zip;
 			    
 		        $client = new Client();
+		        try {
 		        $location = $client->request('GET', $getlocation);
 		        $location = json_decode($location->getBody(), true);
+		      
 		        $city = $location['city'];
 		        $state = $location['state'];
+
+		        } catch(\Exception $e) {
+		        //exception handling
+		        $city = "";
+		        $state = "";
+		        }
 		        
 		        
 
@@ -157,8 +171,16 @@ class PostsController extends Controller
 			    //dd($positions);
 			    $url3 = "https://www.googleapis.com/civicinfo/v2/representatives?address=" . $clean_address . $user_city . $user_state . $user_zip . "&levels=country&roles=legislatorLowerBody&key=". $_ENV['CIVIC_API_KEY'];
 		        $client = new Client();
+
+		        try {
 		        $response3 = $client->request('GET', $url3);
 		        $response3 = json_decode($response3->getBody(), true);
+		        } catch(\Exception $e) {
+		        //exception handling
+		        $response3 = "";
+		        }
+
+		        
 		        
 		        //then set the variables
 		        if (isset($response3['officials'])) {
@@ -171,7 +193,7 @@ class PostsController extends Controller
 			  }
 		       
 			
-			return view('posts.show', compact('post', 'next', 'previous', 'actions', 'url', 'response', 'id', 'statement_1', 'statement_2', 'position_1', 'position_2', 'senator_1', 'senator_2', 'call_script_1', 'call_script_2', 'call_script_3', 'call_script_4', 'call_script_5', 'call_script_6', 'call_script_7', 'call_script_8', 'call_script_9', 'call_script_10', 'governor', 'governor_phone', 'rep', 'rep_phone', 'rep_slug', 'positions'), ['title' => $pageType]);
+			return view('posts.show', compact('post', 'next', 'previous', 'actions', 'url', 'response', 'id', 'statement_1', 'statement_2', 'position_1', 'position_2', 'senator_1', 'senator_2', 'call_script_1', 'call_script_2', 'call_script_3', 'call_script_4', 'call_script_5', 'call_script_6', 'call_script_7', 'call_script_8', 'call_script_9', 'call_script_10', 'governor', 'governor_phone', 'rep', 'rep_phone', 'rep_slug', 'positions', 'state'), ['title' => $pageType]);
 		}
 
 	public function create()

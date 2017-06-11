@@ -72,6 +72,7 @@
 
                         <div class="row text-center"  style="padding-bottom: 30px;">
                         @if ( Auth::user()->zip )
+                        @if ( $response != "" )
 
                         @foreach ($response['offices'] as $res)
                             
@@ -154,11 +155,17 @@
                                 @endif
                                 @endif
 
+
+
                             @endforeach
 
 
                         @endforeach
+                        <p><i>* This data is pulled from the <a href="https://developers.google.com/civic-information/">Google Civic API</a>. If you see missing or incorrect information for an elected official, please <a href="https://docs.google.com/a/wall-of-us.org/forms/d/e/1FAIpQLScA45a5Acnn6hK1R6dd45ttoVbI4tWc7oXl-pjQ-84yx7yuxA/viewform" target="_blank">report it here</a>.</i></p>
 
+                        @else
+                        <p><i>We can't seem to parse your address, please <a href="/edit">update it</a>, and if it still doesn't work email <a href="mailto:contact@wall-of-us.org">contact@wall-of-us.org</a></i><br /></p>
+                        @endif
                         @else
                         <p><i><a href="/edit">You need to add your address to see personalized content</a></i><br /></p>
                         <p><a class="btn btn-cta btn-cta-body" href="/edit">Update Profile</a> </p>
@@ -166,7 +173,7 @@
                         @endif
                         </div><br>
                         
-                        <p><i>* This data is pulled from the <a href="https://developers.google.com/civic-information/">Google Civic API</a>. If you see missing or incorrect information for an elected official, please <a href="https://docs.google.com/a/wall-of-us.org/forms/d/e/1FAIpQLScA45a5Acnn6hK1R6dd45ttoVbI4tWc7oXl-pjQ-84yx7yuxA/viewform" target="_blank">report it here</a>.</i></p>
+                        
                    
                 </div><!--//form-box-->
             </div><!--//row-->
