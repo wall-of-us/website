@@ -28,8 +28,8 @@ class ProfileController extends Controller
         $user_city = \Auth::user()->city;
         $user_state = \Auth::user()->state;
         $user_zip = \Auth::user()->zip;
-        $clean_address = str_replace(array(' ', '#','.'), '', $user_address);
-        $clean_city = str_replace(array(' ', '#','.'), '', $user_city);
+        $clean_address = str_replace(array('#','.'), '', $user_address);
+        $clean_city = str_replace(array('#','.'), '', $user_city);
 
        
             
