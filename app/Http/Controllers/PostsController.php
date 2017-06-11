@@ -145,10 +145,18 @@ class PostsController extends Controller
         		$getlocation = "http://ziptasticapi.com/" . $zip;
 			    
 		        $client = new Client();
+		        try {
 		        $location = $client->request('GET', $getlocation);
 		        $location = json_decode($location->getBody(), true);
+		      
 		        $city = $location['city'];
 		        $state = $location['state'];
+
+		        } catch(\Exception $e) {
+		        //exception handling
+		        $city = "";
+		        $state = "";
+		        }
 		        
 		        
 
@@ -185,7 +193,7 @@ class PostsController extends Controller
 			  }
 		       
 			
-			return view('posts.show', compact('post', 'next', 'previous', 'actions', 'url', 'response', 'id', 'statement_1', 'statement_2', 'position_1', 'position_2', 'senator_1', 'senator_2', 'call_script_1', 'call_script_2', 'call_script_3', 'call_script_4', 'call_script_5', 'call_script_6', 'call_script_7', 'call_script_8', 'call_script_9', 'call_script_10', 'governor', 'governor_phone', 'rep', 'rep_phone', 'rep_slug', 'positions'), ['title' => $pageType]);
+			return view('posts.show', compact('post', 'next', 'previous', 'actions', 'url', 'response', 'id', 'statement_1', 'statement_2', 'position_1', 'position_2', 'senator_1', 'senator_2', 'call_script_1', 'call_script_2', 'call_script_3', 'call_script_4', 'call_script_5', 'call_script_6', 'call_script_7', 'call_script_8', 'call_script_9', 'call_script_10', 'governor', 'governor_phone', 'rep', 'rep_phone', 'rep_slug', 'positions', 'state'), ['title' => $pageType]);
 		}
 
 	public function create()

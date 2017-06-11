@@ -13,6 +13,7 @@ use App\Post;
 use Image;
 use App\Action;
 
+
 class ProfileController extends Controller
 {
     public function index()
@@ -29,6 +30,8 @@ class ProfileController extends Controller
         $user_zip = \Auth::user()->zip;
         $clean_address = str_replace(array(' ', '#','.'), '', $user_address);
         $clean_city = str_replace(array(' ', '#','.'), '', $user_city);
+
+       
             
             
         $url = "https://www.googleapis.com/civicinfo/v2/representatives?address=" . $clean_address . $clean_city . $user_state . $user_zip . "&includeOffices=true&key=". $_ENV['CIVIC_API_KEY'];
@@ -49,11 +52,19 @@ class ProfileController extends Controller
         $getlocation = "http://ziptasticapi.com/" . $zip;
         
         $client = new Client();
+
+        try {
         $location = $client->request('GET', $getlocation);
         $location = json_decode($location->getBody(), true);
       
         $city = $location['city'];
         $state = $location['state'];
+
+        } catch(\Exception $e) {
+        //exception handling
+        $city = "";
+        $state = "";
+        }
         
         
 
