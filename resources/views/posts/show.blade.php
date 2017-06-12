@@ -76,24 +76,55 @@
 
                                     @else 
 
-                                    <div class='search'>
-                                    <form action="/actions" method="POST" target="action">
-                                        {{ csrf_field() }} 
-                                        <input type="hidden" name="post_id" value="{{ $post->id }}">
-                                        <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
-                                        <button type="submit" class="btn btn-cta btn-cta-body">I Took Action</button>
-                                    </form></div>
+                                    
+                                    
+                            <div class="blog-entry-content">
+                                    <div id = 'msg'>
+                                    <button type="button" id="button" onClick="getMessage()" class="btn btn-cta btn-cta-body" data-toggle="modal">I Took Action</button>
+                                    
+                                    </div>
+
+                                      <script>
+                                         function getMessage(){
+                                            var _token = $('meta[name="_token"]').attr('content');
+
+                                            $.ajax({
+                                               type:'POST',
+                                               url:'/getmsg',
+                                               data: {_token: _token, post_id: "{{ $post->id }}", user_id: "{{ Auth::user()->id }}"},
+                                               success:function(data){
+                                                  $("#msg").html(data.msg);
+                                               },
+                                               error: function(data){
+                                                    console.log(data);
+                                               }
+                                            });
+                                         }
+                                      </script>
+                                      </div>
+                                      
+
 
                                     @endif
                                     
-                                    <br /><br />
-                                    <div class="sharethis-inline-share-buttons"></div>
+                                    
+                                    <ul class="social list-inline">
+                                    <li><div data-network="twitter" class="st-custom-button"><i class="fa fa-twitter"></i></div>
+                                    <li><div data-network="facebook" class="st-custom-button"><i class="fa fa-facebook"></i></div> 
+                                    <li><div data-network="email" class="st-custom-button"><i class="fa fa-envelope"></i></div>
+                                    </ul>
                                     </p>  
                                 @else
                                     <p style="text-align: center;"><a class="btn btn-cta btn-cta-body" href="/signup">I Took Action</a><br />
 
                                     <br /><br />
-                                    <div class="sharethis-inline-share-buttons"></div>
+                                    <ul class="social list-inline">
+                                    <li><div data-network="twitter" class="st-custom-button"><i class="fa fa-twitter"></i></div>
+                                    <li><div data-network="facebook" class="st-custom-button"><i class="fa fa-facebook"></i></div> 
+                                    <li><div data-network="email" class="st-custom-button"><i class="fa fa-envelope"></i></div>
+                                    </ul>
+
+
                                     </p>
                                 @endif
                

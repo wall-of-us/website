@@ -92,7 +92,9 @@ class ProfileController extends Controller
 
         $one_week_ago = \Carbon\Carbon::now()->subWeeks(1);
         $newactions = \DB::table('actions')->where('user_id', '=', $userid)->where('created_at', '>=', '2017-06-04 12:00:00')->get();
-        $newaction_count = $newactions->count();   
+        $newaction_count = $newactions->count(); 
+        if ($newaction_count > '4')
+        $newaction_count = '4';  
         $leftthisweek = 4 - $newaction_count;
         $counter = 0;
         

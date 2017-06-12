@@ -8,7 +8,7 @@
                 <div class="row">                    
                     <div class="footer-col links col-md-2 col-sm-4 col-xs-12 sm-break">
                         <div class="footer-col-inner">
-                            <a class="btn btn-cta btn-cta-secondary" href="https://secure.actblue.com/contribute/page/wall-of-us?refcode=nav">Donate</a>
+                            <a class="btn btn-cta btn-cta-bottom" href="https://secure.actblue.com/contribute/page/wall-of-us?refcode=nav">Donate</a>
                         </div><!--//footer-col-inner-->            
                     
                     </div><!--//foooter-col-->  
