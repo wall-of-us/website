@@ -82,6 +82,21 @@ a.btn-cta-secondary:hover,
   color: #fff;
   font-size: 12px;
 }
+a.btn-cta-bottom,
+.btn-cta-bottom {
+  background: none;
+  border: 2px solid #000;
+  color: #fff;
+  font-size: 12px;
+}
+a.btn-cta-bottom:hover,
+.btn-cta-bottom:hover {
+  background: none;
+  border: 2px solid #666;
+  color: #333;
+  font-size: 12px;
+}
+
 a.btn-cta-home,
 .btn-cta-home {
   background: none;
@@ -105,7 +120,7 @@ a.btn-cta-home:hover,
 }
 a.btn-cta-footer,
 .btn-cta-footer {
-  color: #fff;
+  color: #000;
   font-size: 12px;
 }
 
@@ -3019,8 +3034,8 @@ img .post-thumb {
 
 /* ======= Footer ======= */
 .footer {
-  background: #1f1f1f;
-  color: #fff;
+  background: #fff;
+  color: #1f1f1f;
   padding: 30px;
   padding-top: 50px;
   font-size: 24px;
@@ -3035,7 +3050,7 @@ img .post-thumb {
 .footer .btn-cta,
 .footer a.btn-cta {
   padding: 9px 10px;
-  color:#fff;
+  color:#000;
 }
 .footer .footer-col.links .fa {
   margin-right: 5px;
@@ -3054,15 +3069,15 @@ img .post-thumb {
   margin-right: 10px;
 }
 .footer .footer-col.connect .social li a .fa {
-  color: #fff;
+  color: #000;
   font-size: 28px;
 }
 .footer .footer-col.connect .social li a:hover .fa {
-  color: #fff;
+  color: #000;
 }
 .footer .footer-col.connect .btn-cta-primary {
-  background: #fff;
-  border-color: #fff;
+  background: #000;
+  border-color: #000;
 }
 .footer .footer-col.connect .btn-cta-primary:hover {
   background: #4a6781;
@@ -3082,10 +3097,10 @@ img .post-thumb {
   color: #fff;
 }
 .footer .footer-col a {
-  color: #fff;
+  color: #000;
 }
 .footer .footer-col a:hover {
-  color: #eee;
+  color: #666;
 }
 .footer .footer-col .navbar-form {
   padding-left: 0;
@@ -4177,6 +4192,21 @@ overflow: hidden;
     float: none;
     margin: 0 auto;
 }
+
+
+.st-custom-button[data-network] {
+   background-color: #fff;
+   display: inline-block;
+   padding: 5px 10px;
+   cursor: pointer;
+   font-weight: bold;
+   font-size: 24px;
+   color: #000;
+   
+   &:hover, &:focus {
+      text-decoration: underline;
+      background-color: #00c7ff;
+   }
 
 
 

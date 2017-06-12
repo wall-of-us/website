@@ -218,9 +218,11 @@ class PostsController extends Controller
 	public function actionTaken()
 		{
 			
-			Action::create(request(['post_id', 'user_id']));
-			
-			
-			return \Redirect::back()->withStatus('Form submitted!');
+   	  Action::create(request(['post_id', 'user_id']));
+      $msg = "<button class='btn btn-cta btn-cta-taken' disabled><i class='fa fa-check' style='color:#12464d'></i> I Took Action</button><br /><br/>Nice work <img src='https://emojipedia-us.s3.amazonaws.com/cache/b6/11/b6110b7ec0d06a12d27b3dc0d7d39a3e.png' height='20'> you added another brick to the wall! <img src='https://emojipedia-us.s3.amazonaws.com/cache/bf/9c/bf9cbf38f5a612850be7a519a8f0ff1a.png' height='20'> Tell the world:";
+      return response()->json([
+            'msg'=> $msg
+          ], 200);
+   
 		}
 }

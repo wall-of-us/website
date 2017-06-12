@@ -52,7 +52,10 @@ Route::get('/reps/{name}', 'RepsController@rep');
 Route::get('/governors/{name}', 'RepsController@governor');
 
 
-
+Route::get('ajax',function(){
+   return view('posts.message');
+});
+Route::post('/getmsg','PostsController@actionTaken');
 
 
 
