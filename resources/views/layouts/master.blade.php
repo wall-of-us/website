@@ -13,6 +13,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{ $post->shortbody }}">
     <meta name="author" content="wall-of-us"> 
+    <meta name="_token" content="{{ csrf_token() }}" />  
+
 
     <meta property="og:url" content="{{ $url }}" />
     <meta property="og:type" content="article" />
@@ -21,9 +23,12 @@
     <meta property="og:image" content="https://s3-us-west-1.amazonaws.com/wallofus/posts/{{ $post->image }}" />
 
     <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=58f845f484ae8700129bcc7a&product=inline-share-buttons"></script>
+    <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#product=custom-share-buttons"></script>
 
 	<script src="https://use.typekit.net/oht7xro.js"></script>
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <link rel="shortcut icon" href="favicon.ico">  
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic,900,900italic,300italic,300' rel='stylesheet' type='text/css'> 
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100' rel='stylesheet' type='text/css'>
