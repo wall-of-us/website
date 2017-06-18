@@ -70,7 +70,7 @@
                                     @if ($actions->count() > 0)
 
                                     <div class='search'>
-                                        <button type="submit" class="btn btn-cta btn-cta-taken" disabled><i class="fa fa-check" style="color:#12464d"></i> I Took Action</button><br />
+                                        <button type="submit" class="btn btn-cta btn-cta-taken" disabled><i class="fa fa-check" style="color:#12464d"></i> I Took Action</button><br /><br />
                                         <!--{{ $post->actions->count() }} actions taken-->
                                     </div>
 
@@ -115,7 +115,7 @@
                                     </ul>
                                     </p>  
                                 @else
-                                    <p style="text-align: center;"><a class="btn btn-cta btn-cta-body" href="/signup">I Took Action</a><br />
+                                    <p><a href="/login">Login</a> to record your actions.</p>
 
                                     <br /><br />
                                     <ul class="social list-inline">
