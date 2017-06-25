@@ -1778,9 +1778,9 @@ img .post-thumb {
 }
 .blog-list .post .content .post-title {
   margin-top: 0;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: normal;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.8px;
   color: #1f1f1f;
 }
 
@@ -3863,7 +3863,6 @@ img .post-thumb {
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
     color: #1f1f1f;
-    background: #fff;
     padding-left: 0;
     padding-top: 25px;
   }

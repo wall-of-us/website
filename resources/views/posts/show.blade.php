@@ -10,7 +10,7 @@
             </div><!--//blog-headline-bg-->
             <div class="blog-entry">                 
                 <article class="post">
-                    <header class="blog-entry-heading"  style="background: url('https://s3-us-west-1.amazonaws.com/wallofus/posts/{{ $post->image }}') no-repeat 50% top; background-size: cover;">
+                    <header class="blog-entry-heading"  style="background: url('https://s3-us-west-1.amazonaws.com/wallofus/posts/{{ $post->image }}') no-repeat 50%; background-size: cover;">
                                 
                             <div class="container text-center">
                                 <h2 class="title">action {{ $post->action }}: {{ $post->title }}</h2>
