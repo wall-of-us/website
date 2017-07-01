@@ -20,7 +20,7 @@
                     </div><!--//foooter-col-->    
                     <div class="footer-col links col-md-2 col-sm-4 col-xs-12">
                         <div class="footer-col-inner">
-                            <a class="btn btn-cta btn-cta-footer" href="https://docs.google.com/forms/d/1dBqBbZ-A0IhKeG1PDZjD4-XZwIq9DmSXxyyZAdgzlaI/viewform?edit_requested=true" target="_blank">Website Feedback</a>
+                            <a class="btn btn-cta btn-cta-footer" href="https://docs.google.com/forms/d/e/1FAIpQLScm1loRwBKA9TJdUQdl67ZMA0e-Lc_C3Qm9dU0sQ5FBC7BtMA/viewform" target="_blank">Website Feedback</a>
                             
                         </div><!--//footer-col-inner-->
                     </div><!--//foooter-col-->       
