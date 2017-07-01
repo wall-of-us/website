@@ -4,7 +4,7 @@
 	<div class="bg-slider-wrapper">
         <div class="flexslider bg-slider">
             <ul class="slides">
-                <li style="background: url('https://s3-us-west-1.amazonaws.com/wallofus/IMG_0132.JPG') no-repeat 50% top; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;" class="slide slide-1" ></li>
+                <li style="background: url('https://s3-us-west-1.amazonaws.com/wallofus/newhome.jpg') no-repeat 50% top; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;" class="slide slide-1" ></li>
 				
             </ul>
         </div>
@@ -13,8 +13,8 @@
 	<section class="promo section section-on-bg">
         <div class="container text-center">                
             <h3 class="sub-title">he promised a wall.</h3><span class="title">he will be stopped by a wall of us.</span>
-            <p class="intro">FOUR CONCRETE ACTS OF RESISTANCE
-				DELIVERED TO YOUR INBOX EACH WEEK</p>
+            <p class="intro">FOUR CONCRETE ACTS OF RESISTANCE<br />
+				CURATED AND PERSONALIZED FOR YOU EACH WEEK</p><br />
 
 			@if (Auth::check())
             <p><a class="btn btn-cta btn-cta-home" href="/actions">Take Action</a></p>   

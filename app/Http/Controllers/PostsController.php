@@ -122,6 +122,8 @@ class PostsController extends Controller
 		        $senator_2 = \DB::table('senate')->where('slug', '=', $senator_2)->first();
 		        $statement_2 = \DB::table('statements')->where('prop_id', '=', $senator_2->prop_id)->first();
         		$position_2 = \DB::table('positions')->where('rep_id', '=', $senator_2->prop_id)->where('issue', '=', 'Russia')->first();
+        		$position_3 = \DB::table('positions')->where('rep_id', '=', $senator_1->prop_id)->where('issue', '=', 'Health Care')->first();
+        		$position_4 = \DB::table('positions')->where('rep_id', '=', $senator_2->prop_id)->where('issue', '=', 'Health Care')->first();
 				//dd($statement_2);
 
 				$call_script_1 = 'I want to thank Senator ';
@@ -164,6 +166,7 @@ class PostsController extends Controller
 		        if ($governor != "") {
 		        $governor_slug = $governor->slug;
 		        $positions = \DB::table('governors_positions')->where('slug', '=', $governor_slug)->where('issue', '=', 'climate')->first();
+		        $positions_health = \DB::table('governors_positions')->where('slug', '=', $governor_slug)->where('issue', '=', 'Health Care')->first();
 		        }
 			    
 			    
@@ -193,7 +196,7 @@ class PostsController extends Controller
 			  }
 		       
 			
-			return view('posts.show', compact('post', 'next', 'previous', 'actions', 'url', 'response', 'id', 'statement_1', 'statement_2', 'position_1', 'position_2', 'senator_1', 'senator_2', 'call_script_1', 'call_script_2', 'call_script_3', 'call_script_4', 'call_script_5', 'call_script_6', 'call_script_7', 'call_script_8', 'call_script_9', 'call_script_10', 'governor', 'governor_phone', 'rep', 'rep_phone', 'rep_slug', 'positions', 'state'), ['title' => $pageType]);
+			return view('posts.show', compact('post', 'next', 'previous', 'actions', 'url', 'response', 'id', 'statement_1', 'statement_2', 'position_1', 'position_2', 'position_3', 'position_4', 'senator_1', 'senator_2', 'call_script_1', 'call_script_2', 'call_script_3', 'call_script_4', 'call_script_5', 'call_script_6', 'call_script_7', 'call_script_8', 'call_script_9', 'call_script_10', 'governor', 'positions_health', 'governor_phone', 'rep', 'rep_phone', 'rep_slug', 'positions', 'state'), ['title' => $pageType]);
 		}
 
 	public function create()
