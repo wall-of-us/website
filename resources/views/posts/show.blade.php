@@ -58,6 +58,9 @@
                             @if ($post->id == '125') 
                                 @include ('actions.125')
                             @endif
+                            @if ($post->id == '135') 
+                                @include ('actions.135')
+                            @endif
                             @if ($post->id == '136') 
                                 @include ('actions.136')
                             @endif
