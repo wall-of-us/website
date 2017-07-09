@@ -1,11 +1,17 @@
 
+<p>Here’s how:</p>
+<ol>
+<li>Call your state official using the contact info and script below.</li>
+
+
 @if (Auth::check())
   <table class="table table-striped">
       <thead>
         <tr>
-          <th>Your Governor</th>
+          
           <th>Position</th>
-          <th>Source</th>
+          <th>Rep</th>
+          <th>Contact</th>
           <th>Call Script</th>
           
         </tr>
@@ -13,10 +19,12 @@
       <tbody>
         
         <tr>
-          @if (isset($governor))
-          <td><a href="/governors/{{ $governor->slug }}">Governor {{ $governor->first_name }} {{ $governor->last_name }}</a></td>
-          <td>{{ $positions_health->position }}</td>
-          <td><a href="{{ $positions_health->source }}" target="_blank">{{ $positions_health->desc_source }}</a></td>
+          @if (isset($positions_voting))
+          <td><a href="{{ $positions_voting->source }}" target="_blank">{{ $positions_voting->position }}</a></td>
+          
+          <td>{{ $positions_voting->rep }}, {{ $positions_voting->title }}</td>
+          <td>{{ $positions_voting->contact }}</td>
+          
           <td>
           <!-- Trigger the modal with a button -->
               <button type="button" class="btn btn-body" data-toggle="modal" data-target="#myModal">Click for Script</button>
@@ -29,12 +37,12 @@
                   <div class="modal-content">
                     <div class="modal-header">
                       <button type="button" class="close" data-dismiss="modal">&times;</button>
-                      <h4 class="modal-title">{{ $governor->first_name }} {{ $governor->last_name }} -- Call {{ $governor->phone }}</h4>
+                      <h4 class="modal-title">{{ $positions_voting->rep }}, {{ $positions_voting->title }} -- Call {{ $positions_voting->contact }}</h4>
                     </div>
                     <div class="modal-body">
                       <p>
-                      {!! str_replace(array('<governor>', '<state>'),
-    array($governor->last_name, $governor->state), $positions_health->script) !!}</p>
+                      {!! str_replace(array('<rep>', '<state>', '<title>'),
+    array($positions_voting->rep, $positions_voting->state, $positions_voting->title), $positions_voting->script) !!}</p>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -52,8 +60,12 @@
       
       </tbody>
     </table>
-    <p>&nbsp;&nbsp;&nbsp;&nbsp;Share any new intel you learn about your governor by emailing <a href="mailto:contact@wall-of-us.org">contact@wall-of-us.org</a>.</p>
+    <li>Share this action on social media.</li>
+</ol>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;Check back here for updates, and share any new intel you learn by emailing <a href="mailto:contact@wall-of-us.org">contact@wall-of-us.org</a>.</p>
     @else
-      You must <a href="/login">login</a> to see the contact information for your Governor and a personalized script.
+    <li>Share this action on social media.</li>
+    </ol>
+    <p>You must <a href="/login">login</a> to see the contact information for your reps and a personalized script.</p>
   @endif
   
