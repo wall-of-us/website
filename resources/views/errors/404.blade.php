@@ -10,7 +10,7 @@
             <div class="row">
               <div class="blog-entry-content">
                 <div class="text-center">
-                  <h3 class="title">Sorry, something went wrong. This page can not ne found.</h3>
+                  <h3 class="title">Sorry, something went wrong. This page can not be found.</h3>
                 </div>
                 <p style="font-size: 200px; text-align: center;">404</p>
                 

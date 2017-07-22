@@ -173,6 +173,9 @@ class PostsController extends Controller
 			    if ($state != "") {
 			    	$positions_voting = \DB::table('electionintegrity')->where('state', '=', $state)->orWhere('st', '=', $state)->first();
 			    }
+			    if ($state != "") {
+			    	$ags = \DB::table('ags')->where('state', '=', $state)->orWhere('st', '=', $state)->first();
+			    }
 			    
 			    //dd($positions);
 			    $url3 = "https://www.googleapis.com/civicinfo/v2/representatives?address=" . $clean_address . $user_city . $user_state . $user_zip . "&levels=country&roles=legislatorLowerBody&key=". $_ENV['CIVIC_API_KEY'];
@@ -199,7 +202,7 @@ class PostsController extends Controller
 			  }
 		       
 			
-			return view('posts.show', compact('post', 'next', 'previous', 'actions', 'url', 'response', 'id', 'statement_1', 'statement_2', 'position_1', 'position_2', 'position_3', 'position_4', 'senator_1', 'senator_2', 'call_script_1', 'call_script_2', 'call_script_3', 'call_script_4', 'call_script_5', 'call_script_6', 'call_script_7', 'call_script_8', 'call_script_9', 'call_script_10', 'governor', 'positions_health', 'positions_voting', 'governor_phone', 'rep', 'rep_phone', 'rep_slug', 'positions', 'state'), ['title' => $pageType]);
+			return view('posts.show', compact('post', 'next', 'previous', 'actions', 'url', 'response', 'id', 'statement_1', 'statement_2', 'position_1', 'position_2', 'position_3', 'position_4', 'senator_1', 'senator_2', 'call_script_1', 'call_script_2', 'call_script_3', 'call_script_4', 'call_script_5', 'call_script_6', 'call_script_7', 'call_script_8', 'call_script_9', 'call_script_10', 'governor', 'positions_health', 'positions_voting', 'governor_phone', 'rep', 'rep_phone', 'rep_slug', 'positions', 'state', 'ags'), ['title' => $pageType]);
 		}
 
 	public function create()
