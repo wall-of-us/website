@@ -76,6 +76,12 @@
                             @if ($post->id == '144') 
                                 @include ('actions.144')
                             @endif
+                            @if ($post->id == '147') 
+                                @include ('actions.143')
+                            @endif
+                            @if ($post->id == '148') 
+                                @include ('actions.148')
+                            @endif
                                 
                             </div><!--//blog-entry-content-->
                             
