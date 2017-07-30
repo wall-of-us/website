@@ -42,6 +42,9 @@
                             </div><!--meta-->
                             {!! $post->body !!}
 
+                            @if ($post->cta == '1')
+                                @include ('actions.call')
+                            @endif
                             
                            @if ($post->id == '108') 
                                 @include ('actions.108')
