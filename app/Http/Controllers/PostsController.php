@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Http\Requests;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
@@ -11,6 +12,7 @@ use App\Post;
 use App\Action;
 use Cviebrock\EloquentSluggable\Sluggable;
 use App\User;
+use Image;
 
 class PostsController extends Controller
 {
@@ -205,25 +207,7 @@ class PostsController extends Controller
 			return view('posts.show', compact('post', 'next', 'previous', 'actions', 'url', 'response', 'id', 'statement_1', 'statement_2', 'position_1', 'position_2', 'position_3', 'position_4', 'senator_1', 'senator_2', 'call_script_1', 'call_script_2', 'call_script_3', 'call_script_4', 'call_script_5', 'call_script_6', 'call_script_7', 'call_script_8', 'call_script_9', 'call_script_10', 'governor', 'positions_health', 'positions_voting', 'governor_phone', 'rep', 'rep_phone', 'rep_slug', 'positions', 'state', 'ags'), ['title' => $pageType]);
 		}
 
-	public function create()
-		{
-			$pageType = "Publish a Post";
-			return view('posts.create', ['title' => $pageType]);
-		}
-	public function store()
-		{
-			$this->validate(request(), [
-				
-				'title' => 'required',
-				'body' => 'required'
-				
-				
-			]);
-			
-			Post::create(request(['week', 'action', 'title', 'body', 'shortbody', 'image']));
-			
-			return redirect('/');
-		}
+	
 	public function actionTaken()
 		{
 			
