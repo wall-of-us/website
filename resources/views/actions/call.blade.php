@@ -204,7 +204,7 @@ You must <a href="/login">login</a> to see the contact info and scripts for your
             </div>
             <div class="modal-body">
               <p>
-             {!! str_replace(array('<name>'), array($senator_1->last_name), $post->script) !!}
+             {!! str_replace(array('<name>'), array('Senator '.$senator_1->last_name), $post->script) !!}
               </p>
             </div>
             <div class="modal-footer">
@@ -242,7 +242,7 @@ You must <a href="/login">login</a> to see the contact info and scripts for your
             </div>
             <div class="modal-body">
             <p>
-              {!! str_replace(array('<name>'), array($senator_2->last_name), $post->script) !!}
+              {!! str_replace(array('<name>'), array('Senator '.$senator_2->last_name), $post->script) !!}
               </p>
             </div>
             <div class="modal-footer">
@@ -268,10 +268,10 @@ You must <a href="/login">login</a> to see the contact info and scripts for your
   @if (isset($post->script))
   <td>
   <!-- Trigger the modal with a button -->
-      <button type="button" class="btn btn-body" data-toggle="modal" data-target="#myModal">Call Script</button>
+      <button type="button" class="btn btn-body" data-toggle="modal" data-target="#myModal3">Call Script</button>
 
       <!-- Modal -->
-      <div id="myModal" class="modal fade" role="dialog">
+      <div id="myModal3" class="modal fade" role="dialog">
         <div class="modal-dialog">
 
           <!-- Modal content-->
@@ -282,7 +282,7 @@ You must <a href="/login">login</a> to see the contact info and scripts for your
             </div>
             <div class="modal-body">
               <p>
-             {!! str_replace(array('<name>'), array($rep), $post->script) !!}
+             {!! str_replace(array('<name>'), array('Representitive '.$rep), $post->script) !!}
               </p>
             </div>
             <div class="modal-footer">
