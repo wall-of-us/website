@@ -98,7 +98,7 @@
 </table>
 <p>If you have updated information email us at <a href="contact@wall-of-us.org">contact@wall-of-us.org</a>.</p>
 @else
-You must <a href="/login">login</a> to see the contact info and scripts for your Senators.
+You must <a href="/login">login</a> to see the contact info and scripts for your senators.
 @endif
 @endif
 
@@ -163,7 +163,7 @@ You must <a href="/login">login</a> to see the contact info and scripts for your
 
 <p>If you have updated information email us at <a href="contact@wall-of-us.org">contact@wall-of-us.org</a>.</p>
 @else
-You must <a href="/login">login</a> to see the contact info and scripts for your Representitives.
+You must <a href="/login">login</a> to see the contact info and scripts for your representitives.
 @endif
 @endif
 
@@ -223,7 +223,7 @@ You must <a href="/login">login</a> to see the contact info and scripts for your
 
 <tr>
   <td>@if (isset($senator_2->first_name)) <a href="/reps/{{ $senator_2->slug }}">Senator {{ $senator_2->first_name }} {{ $senator_2->middle_name }} {{ $senator_2->last_name }}</a> @endif</td>
-  <td>{{ $senator_1->phone }}</td>
+  <td>{{ $senator_2->phone }}</td>
   @if (isset($post->script))
   <td>
 
@@ -305,7 +305,7 @@ You must <a href="/login">login</a> to see the contact info and scripts for your
 
 <p>If you have updated information email us at <a href="contact@wall-of-us.org">contact@wall-of-us.org</a>.</p>
 @else
-You must <a href="/login">login</a> to see the contact info and scripts for your Representitives.
+You must <a href="/login">login</a> to see the contact info and scripts for your representitives.
 @endif
 @endif
                             
