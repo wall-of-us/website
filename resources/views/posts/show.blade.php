@@ -3,7 +3,7 @@
 
 @section ('content')
 
-		<!-- ******BLOG****** -->         
+        <!-- ******BLOG****** -->         
         <div class="blog-entry-wrapper"> 
             <!--
             <div class="blog-headline-bg">
@@ -28,7 +28,7 @@
                             </nav><!--//post-nav-->
                                 
                             
-						
+                        
                     </header><!--//blog-entry-heading-->
 
                     <div class="container">
@@ -87,6 +87,9 @@
                             @endif
                             @if ($post->id == '168') 
                                 @include ('actions.168')
+                            @endif
+                            @if ($post->id == '174') 
+                                @include ('actions.174')
                             @endif
                                 
                             </div><!--//blog-entry-content-->
@@ -160,7 +163,7 @@
                
                             
                             
-                            		
+                                    
                                     <!-- Buttons end here -->
                             </div><!--//share-container--> 
                         </div>
