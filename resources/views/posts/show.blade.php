@@ -91,6 +91,9 @@
                             @if ($post->id == '174') 
                                 @include ('actions.174')
                             @endif
+                            @if ($post->id == '184') 
+                                @include ('actions.184')
+                            @endif
                                 
                             </div><!--//blog-entry-content-->
                             
