@@ -87,6 +87,6 @@
                               </table>
                               <p>If you have updated information email us at <a href="contact@wall-of-us.org">contact@wall-of-us.org</a>.</p>
                               @else
-                                You must <a href="/login">login</a> to see the contact info and scripts for your Senators.
+                                You must <a href="/login">login</a> to see the contact info and scripts for your senators.
                             @endif
                             
