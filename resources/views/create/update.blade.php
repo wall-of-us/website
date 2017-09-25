@@ -89,7 +89,7 @@
   <div class="form-group">
     
  
-@if ($post->cta)
+@if ($post->cta == '1')
 <div class="form-group">
 <label for="action">Call to Action</label>
  <select id="cta" name="cta" class="form-control" >
