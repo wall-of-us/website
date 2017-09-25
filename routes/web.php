@@ -27,9 +27,15 @@ Route::post('/actions', 'PostsController@actionTaken');
 
 Route::get('/archive', 'PostsController@archive');
 
-Route::get('/posts/create', 'PostsController@create');
+Route::get('/archive/search/{query}', function ($query) {
+	return App\Post::search($query)->get();
 
-Route::post('/posts', 'PostsController@store');
+});
+
+
+
+Route::get('/assemble', 'AssembleController@create');
+
 
 Route::get('/posts/{post}/{slug}', 'PostsController@show');
 
@@ -92,11 +98,24 @@ Route::group( ['middleware' => 'auth' ], function()
 
 	Route::get('/profile', 'ProfileController@index');
 
+	Route::get('/create', 'CreateController@create');
+
+	Route::get('/admin', 'CreateController@admin');
+
+	Route::post('/delete', 'CreateController@delete');
+
+	Route::get('/update/{post}/{slug}', 'CreateController@update');
+
+	Route::post('/posts', 'CreateController@store');
+
 	});
 
 Route::get('/health', function () {
     return response('Healthy', 200)
                   ->header('Content-Type', 'text/plain');
+});
+Route::get('/data', function () {
+    return view('json.data');
 });
 
 

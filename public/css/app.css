@@ -1984,6 +1984,17 @@ img .post-thumb {
   margin-top: 30px;
   text-transform: capitalize;
 }
+.blog-entry-wrapper .blog-entry .body .action {
+  float: right;
+  text-align: right;
+  max-width: 300px;
+  font-size: 18px;
+}
+.blog-entry-wrapper .blog-entry .body .content {
+  float: left;
+  max-width: 600px;
+  font-size: 18px;
+}
 .blog-entry-wrapper .blog-entry .post-nav .nav-next {
   float: right;
   text-align: right;
@@ -3171,20 +3182,16 @@ img .post-thumb {
   margin-right: auto;
 }
 .pagination li a {
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
+
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
   border: none;
   margin-right: 5px;
-  color: #28a5a8;
+  color: #333;
 }
 .pagination li a:hover {
-  color: #da3518;
+  color: #333;
 }
 .pagination > .active > a,
 .pagination > .active > span,
@@ -3192,25 +3199,21 @@ img .post-thumb {
 .pagination > .active > span:hover,
 .pagination > .active > a:focus,
 .pagination > .active > span:focus {
-  background-color: #28a5a8;
+  background-color: #333;
   border: none;
 }
 .pagination > li > a:hover,
 .pagination > li > span:hover,
 .pagination > li > a:focus,
 .pagination > li > span:focus {
-  background-color: #fbe1dc;
+  background-color: #81bfc8;
   border: none;
 }
 .pagination > li:first-child > a,
 .pagination > li:first-child > span,
 .pagination > li:last-child > a,
 .pagination > li:last-child > span {
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
+
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
@@ -4192,6 +4195,10 @@ overflow: hidden;
     margin: 0 auto;
 }
 
+.myDiv {
+  display: none;  
+}
+
 
 .st-custom-button[data-network] {
    background-color: #fff;
@@ -4207,5 +4214,15 @@ overflow: hidden;
       background-color: #00c7ff;
    }
 
+.admin-button {
+   background-color: #fff;
+   display: inline-block;
+   padding: 0px;
+   cursor: pointer;
+   font-weight: bold;
+   font-size: 24px;
+   color: #000;
+   
+   }
 
 
