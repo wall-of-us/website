@@ -5,7 +5,7 @@
 
 <head>
     
-    <title>About Us -- wall-of-us</title>
+    <title>wall-of-us</title>
 
     <!-- Meta -->
     <meta charset="utf-8">
@@ -27,7 +27,7 @@
     <link rel="shortcut icon" href="favicon.ico">  
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic,900,900italic,300italic,300' rel='stylesheet' type='text/css'> 
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100' rel='stylesheet' type='text/css'>
-  
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap3-wysihtml5.min.css"></link>
     <!-- Global CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">   
     <!-- Plugins CSS -->    
@@ -92,6 +92,9 @@
     
 	@include ('layouts.footer')
 	
+    
+
+    
 	
 	</body>
 	</html> 

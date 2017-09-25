@@ -46,13 +46,22 @@
 	</footer><!--//footer-->
 
 <!-- Javascript -->          
+
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="/js/bootstrap3-wysihtml5.min.js"></script>
+    <script>
+
+      $('.textarea').wysihtml5('');
+
+    </script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-hover-dropdown/2.2.1/bootstrap-hover-dropdown.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-placeholder/2.3.1/jquery.placeholder.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.3/flexslider.min.css"></script>     
     <script type="text/javascript" src="https://nneditch.github.io/wall-of-us/assets/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
+
     
     
     <!-- blog specific js starts -->
@@ -61,6 +70,7 @@
     <script type="text/javascript" src="https://nneditch.github.io/wall-of-us/assets/plugins/masonry.pkgd.min.js"></script> 
     <script type="text/javascript" src="https://nneditch.github.io/wall-of-us/assets/js/blog.js"></script>
     <!-- blog specific js ends --> 
+
 
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
