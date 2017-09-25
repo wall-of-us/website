@@ -153,6 +153,7 @@
     <input type="text" class="form-control" id="link" name="link">
   </div>
 </div>
+</div>
 @endif
 
 <!-- CTA: Petition -->
