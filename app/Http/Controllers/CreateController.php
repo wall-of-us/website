@@ -39,15 +39,26 @@ class CreateController extends Controller
 		}
 	public function store(Request $request)
 		{
+			$id = \Request::input('id');
+			if ($id == "") {
 			$this->validate(request(), [
 				
 				'title' => 'required',
 				'slug' => 'required',
 				'week' => 'required|date|date_format:Y-m-d|after:yesterday'
 				
+				
 			]);
-
-
+			} else {
+				$this->validate(request(), [
+				
+				'title' => 'required',
+				'slug' => 'required',
+				'week' => 'required'
+				
+				
+			]);
+				}
            //Handle the user upload of post image
        
             $picture = $request->file('picture');
@@ -65,7 +76,7 @@ class CreateController extends Controller
             	
             }
 
-            $id = \Request::input('id');
+            
             $week = \Request::input('week');
             $action = \Request::input('action');
             $title = \Request::input('title');

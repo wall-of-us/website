@@ -89,7 +89,7 @@
   <div class="form-group">
     
  
-@if ($post->cta)
+@if ($post->cta == '1')
 <div class="form-group">
 <label for="action">Call to Action</label>
  <select id="cta" name="cta" class="form-control" >
@@ -152,6 +152,7 @@
     <label for="title">Or link to donation page</label>
     <input type="text" class="form-control" id="link" name="link">
   </div>
+</div>
 </div>
 @endif
 
