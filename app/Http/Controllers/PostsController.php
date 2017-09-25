@@ -22,7 +22,7 @@ class PostsController extends Controller
 	public function index()
 		{
 			
-			$posts = Post::limit(4)->orderBy('week', 'DESC')->orderBy('action', 'asc')->get();
+			$posts = Post::limit(4)->orderBy('week', 'DESC')->orderBy('action', 'asc')->where('week', '<=', date('Y-m-d'))->get();
 			
 			return view('posts.index', compact('posts'));
 		}
@@ -46,7 +46,7 @@ class PostsController extends Controller
 	public function actions()
 		{
 			$pageType = "Weekly Acts";
-			$posts = Post::orderBy('week', 'DESC')->orderBy('action', 'asc')->take(4)->get();
+			$posts = Post::orderBy('week', 'DESC')->orderBy('action', 'asc')->take(4)->where('week', '<=', date('Y-m-d'))->get();
 			$url = \Request::url();
 			
 			$count = Post::count();
@@ -63,7 +63,7 @@ class PostsController extends Controller
 	public function archive()
 		{
 			$pageType = "Weekly Acts";
-			$posts = Post::orderBy('week', 'DESC')->orderBy('action', 'asc')->get();
+			$posts = Post::orderBy('week', 'DESC')->orderBy('action', 'asc')->where('week', '<=', date('Y-m-d'))->get();
 			$url = \Request::url();
 			
 			$count = Post::count();
