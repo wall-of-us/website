@@ -32,10 +32,7 @@
     <label for="title">Title</label>
     <input type="text" class="form-control" id="title" name="title">
   </div>
-  <div class="form-group">
-    <label for="title">Slug</label>
-    <input type="text" class="form-control" id="slug" name="slug">
-  </div>
+  
   <div class="form-group">
     <label for="exampleInputFile">Upload an Image</label>
     <input type="file" class="form-control-file" id="picture" name="picture">
