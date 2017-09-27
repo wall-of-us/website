@@ -44,7 +44,6 @@ class CreateController extends Controller
 			$this->validate(request(), [
 				
 				'title' => 'required',
-				'slug' => 'required',
 				'week' => 'required|date|date_format:Y-m-d|after:yesterday'
 				
 				
@@ -53,7 +52,6 @@ class CreateController extends Controller
 				$this->validate(request(), [
 				
 				'title' => 'required',
-				'slug' => 'required',
 				'week' => 'required'
 				
 				
@@ -83,9 +81,9 @@ class CreateController extends Controller
             $week = \Request::input('week');
             $action = \Request::input('action');
             $title = \Request::input('title');
+            $slug = str_slug($title, "-");
             $body = \Request::input('body');
             $shortbody = \Request::input('shortbody');
-            $slug = \Request::input('slug');
             $cta = \Request::input('cta');
             $call = \Request::input('call');
             $script = \Request::input('script');

@@ -35,10 +35,7 @@
     <label for="title">Title</label>
     <input type="text" class="form-control" id="title" name="title" value="{{ $post->title }}">
   </div>
-  <div class="form-group">
-    <label for="title">Slug</label>
-    <input type="text" class="form-control" id="slug" name="slug" value="{{ $post->slug }}">
-  </div>
+  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
   
