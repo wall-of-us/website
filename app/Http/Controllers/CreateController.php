@@ -66,7 +66,10 @@ class CreateController extends Controller
             if ($picture) {
             $filename = time() . '.' . $picture->getClientOriginalExtension();
 
-            Image::make($picture)->save( public_path('/uploads/posts/' . $filename ));
+            Image::make($picture)->resize(1000, null, function ($constraint) {
+			    $constraint->aspectRatio();
+			    $constraint->upsize();
+			})->save( public_path('/uploads/posts/' . $filename ));
             \Storage::disk('s3')->put('/posts/' . $filename , file_get_contents($request->file('picture')),  'public'); 
 			
             
