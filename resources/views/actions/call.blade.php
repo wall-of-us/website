@@ -110,7 +110,7 @@ You must <a href="/login">login</a> to see the contact info and scripts for your
 <table class="table table-striped">
 <thead>
 <tr>
-  <th>Your representative</th>
+  <th>Your Representative</th>
   <th>Phone Number</th>
   @if (isset($post->script))
   <th>Call Script</th>
@@ -121,7 +121,7 @@ You must <a href="/login">login</a> to see the contact info and scripts for your
 
 <tr>
   @if (isset($rep))
-  <td><a href="/house/{{ $rep_slug }}">representative {{ $rep }}</a></td>
+  <td><a href="/house/{{ $rep_slug }}">Representative {{ $rep }}</a></td>
   <td>{{ $rep_phone }}</td>
   @if (isset($post->script))
   <td>
@@ -136,7 +136,7 @@ You must <a href="/login">login</a> to see the contact info and scripts for your
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">representative {{ $rep }} -- Call {{ $rep_phone }}</h4>
+              <h4 class="modal-title">Representative {{ $rep }} -- Call {{ $rep_phone }}</h4>
             </div>
             <div class="modal-body">
               <p>
@@ -175,7 +175,7 @@ You must <a href="/login">login</a> to see the contact info and scripts for your
 <table class="table table-striped">
 <thead>
 <tr>
-  <th>Your representative(s)</th>
+  <th>Your Representative(s)</th>
   <th>Phone Number</th>
   @if (isset($post->script))
   <th>Call Script</th>
@@ -263,7 +263,7 @@ You must <a href="/login">login</a> to see the contact info and scripts for your
 </tr>
 <tr>
   @if (isset($rep))
-  <td><a href="/house/{{ $rep_slug }}">representative {{ $rep }}</a></td>
+  <td><a href="/house/{{ $rep_slug }}">Representative {{ $rep }}</a></td>
   <td>{{ $rep_phone }}</td>
   @if (isset($post->script))
   <td>
@@ -278,11 +278,11 @@ You must <a href="/login">login</a> to see the contact info and scripts for your
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">representative {{ $rep }} -- Call {{ $rep_phone }}</h4>
+              <h4 class="modal-title">Representative {{ $rep }} -- Call {{ $rep_phone }}</h4>
             </div>
             <div class="modal-body">
               <p>
-             {!! str_replace(array('<name>'), array('representative '.$rep), $post->script) !!}
+             {!! str_replace(array('<name>'), array('Representative '.$rep), $post->script) !!}
               </p>
             </div>
             <div class="modal-footer">
