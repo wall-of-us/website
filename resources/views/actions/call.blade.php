@@ -110,7 +110,7 @@ You must <a href="/login">login</a> to see the contact info and scripts for your
 <table class="table table-striped">
 <thead>
 <tr>
-  <th>Your Representitive</th>
+  <th>Your representative</th>
   <th>Phone Number</th>
   @if (isset($post->script))
   <th>Call Script</th>
@@ -121,7 +121,7 @@ You must <a href="/login">login</a> to see the contact info and scripts for your
 
 <tr>
   @if (isset($rep))
-  <td><a href="/house/{{ $rep_slug }}">Representitive {{ $rep }}</a></td>
+  <td><a href="/house/{{ $rep_slug }}">representative {{ $rep }}</a></td>
   <td>{{ $rep_phone }}</td>
   @if (isset($post->script))
   <td>
@@ -136,7 +136,7 @@ You must <a href="/login">login</a> to see the contact info and scripts for your
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">Representitive {{ $rep }} -- Call {{ $rep_phone }}</h4>
+              <h4 class="modal-title">representative {{ $rep }} -- Call {{ $rep_phone }}</h4>
             </div>
             <div class="modal-body">
               <p>
@@ -152,18 +152,18 @@ You must <a href="/login">login</a> to see the contact info and scripts for your
       </div>
 
   </td>
-  
+  @endif
 </tr>
 
 </tbody>
 </table>
-@endif
+
 @endif
 
 
 <p>If you have updated information email us at <a href="contact@wall-of-us.org">contact@wall-of-us.org</a>.</p>
 @else
-You must <a href="/login">login</a> to see the contact info and scripts for your representitives.
+You must <a href="/login">login</a> to see the contact info and scripts for your representatives.
 @endif
 @endif
 
@@ -175,7 +175,7 @@ You must <a href="/login">login</a> to see the contact info and scripts for your
 <table class="table table-striped">
 <thead>
 <tr>
-  <th>Your Representitive(s)</th>
+  <th>Your representative(s)</th>
   <th>Phone Number</th>
   @if (isset($post->script))
   <th>Call Script</th>
@@ -263,7 +263,7 @@ You must <a href="/login">login</a> to see the contact info and scripts for your
 </tr>
 <tr>
   @if (isset($rep))
-  <td><a href="/house/{{ $rep_slug }}">Representitive {{ $rep }}</a></td>
+  <td><a href="/house/{{ $rep_slug }}">representative {{ $rep }}</a></td>
   <td>{{ $rep_phone }}</td>
   @if (isset($post->script))
   <td>
@@ -278,11 +278,11 @@ You must <a href="/login">login</a> to see the contact info and scripts for your
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">Representitive {{ $rep }} -- Call {{ $rep_phone }}</h4>
+              <h4 class="modal-title">representative {{ $rep }} -- Call {{ $rep_phone }}</h4>
             </div>
             <div class="modal-body">
               <p>
-             {!! str_replace(array('<name>'), array('Representitive '.$rep), $post->script) !!}
+             {!! str_replace(array('<name>'), array('representative '.$rep), $post->script) !!}
               </p>
             </div>
             <div class="modal-footer">
@@ -305,7 +305,40 @@ You must <a href="/login">login</a> to see the contact info and scripts for your
 
 <p>If you have updated information email us at <a href="contact@wall-of-us.org">contact@wall-of-us.org</a>.</p>
 @else
-You must <a href="/login">login</a> to see the contact info and scripts for your representitives.
+You must <a href="/login">login</a> to see the contact info and scripts for your representatives.
 @endif
 @endif
-                            
+
+<!-- AGs -->
+
+@if ($post->call == 'AGs')
+@if (Auth::check())
+
+<table class="table table-striped">
+<thead>
+<tr>
+  <th>Your Attorney General</th>
+  <th>Phone Number</th>
+ 
+</tr>
+</thead>
+<tbody>
+
+<tr>
+  @if (isset($ags))
+  <td>{{ $ags->first_name }} {{ $ags->last_name }}</td>
+  <td>{{ $ags->phone }}</td>
+  
+</tr>
+
+</tbody>
+</table>
+
+@endif
+
+
+<p>If you have updated information email us at <a href="contact@wall-of-us.org">contact@wall-of-us.org</a>.</p>
+@else
+You must <a href="/login">login</a> to see the contact info and scripts for your representatives.
+@endif
+@endif
