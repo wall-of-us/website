@@ -29,10 +29,10 @@ class ProfileController extends Controller
         $user_state = \Auth::user()->state;
         $user_zip = \Auth::user()->zip;
         $clean_address = str_replace(array('#','.'), '', $user_address);
+        $clean_address = substr($clean_address, 0, strpos($clean_address, ','));
+        
         $clean_city = str_replace(array('#','.'), '', $user_city);
-
-       
-            
+        
             
         $url = "https://www.googleapis.com/civicinfo/v2/representatives?address=" . $clean_address . $clean_city . $user_state . $user_zip . "&includeOffices=true&key=". $_ENV['CIVIC_API_KEY'];
         
