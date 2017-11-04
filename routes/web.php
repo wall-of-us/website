@@ -27,6 +27,8 @@ Route::post('/actions', 'PostsController@actionTaken');
 
 Route::get('/archive', 'PostsController@archive');
 
+Route::get('/bricks', 'PostsController@bricks');
+
 Route::get('/archive/search/{query}', function ($query) {
 	return App\Post::search($query)->get();
 

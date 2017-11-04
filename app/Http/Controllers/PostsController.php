@@ -76,6 +76,20 @@ class PostsController extends Controller
 			
 			return view('posts.archive', compact('posts', 'archive', 'counter', 'url'), ['title' => $pageType]);
 		}
+	public function bricks()
+		{
+			$pageType = "Brick by Brick";
+			$bricks = \DB::table('bricks')->orderBy('date', 'DESC')->get();
+			$url = \Request::url();
+			
+			$count = \DB::table('bricks')->count();
+			$skip = 4;
+			$limit = $count - $skip; // the limit
+     		$counter = 0;
+
+			
+			return view('posts.bricks', compact('bricks', 'counter', 'url'), ['title' => $pageType]);
+		}
 	public function show(Post $post)
 		{
 			$pageType = "Weekly Acts";
@@ -99,6 +113,8 @@ class PostsController extends Controller
 		        $user_state = \Auth::user()->state;
 		        $user_zip = \Auth::user()->zip;
 		        $clean_address = str_replace(array('#','.'), '', $user_address);
+		        $clean_address = substr($clean_address, 0, strpos($clean_address, ','));
+
 		        
 		        //first find out who there reps are
 		        $url = "https://www.googleapis.com/civicinfo/v2/representatives?address=" . $clean_address . $user_city . $user_state . $user_zip . "&levels=country&roles=legislatorUpperBody&key=". $_ENV['CIVIC_API_KEY'];
