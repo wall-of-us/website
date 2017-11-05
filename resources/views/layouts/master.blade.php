@@ -36,6 +36,7 @@
     <!-- Global CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">   
     <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.3/flexslider.css">
     <!-- Theme CSS -->
@@ -74,8 +75,8 @@
                         <ul class="nav navbar-nav">
                             <li class="nav-item"><a href="/">Home</a></li>
 						<li class="nav-item"><a href="/actions">Weekly Acts</a></li>
-						<!--<li class="nav-item"><a href="/bricks">Brick-by-brick</a></li>-->
-                        <li class="nav-item"><a href="/about">About Us</a></li>
+						<li class="nav-item"><a href="/bricks">Brick-by-brick</a></li>
+                        <!--<li class="nav-item"><a href="/about">About Us</a></li>-->
 						@if (Auth::check())
 						
                         <li class="nav-item"><a href="/profile"><img src="{{ Auth::user()->picture }}" alt="Alternate Text" class="user-tiny" />&nbsp;
