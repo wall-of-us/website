@@ -53,7 +53,7 @@
     <header id="header" class="header navbar-fixed-top">  
         <div class="container">       
             <h1 class="logo">
-                <a href="/"><span class="text">Wall-of-Us</span></a>
+                <a href="/">Wall-of-Us</a>
             </h1><!--//logo-->
             <nav class="main-nav navbar-right" role="navigation">
                 <div class="navbar-header">
@@ -68,8 +68,8 @@
                     <ul class="nav navbar-nav">
                         <li class="nav-item"><a href="/">Home</a></li>
 						<li class="nav-item"><a href="/actions">Weekly Acts</a></li>
-						<!--<li class="nav-item"><a href="/bricks">Brick-by-brick</a></li>-->
-                        <li class="nav-item"><a href="/about">About Us</a></li>
+						<li class="nav-item"><a href="/bricks">Brick-by-brick</a></li>
+                        <!--<li class="nav-item"><a href="/about">About Us</a></li>-->
                
 						@if (Auth::check())	
 							

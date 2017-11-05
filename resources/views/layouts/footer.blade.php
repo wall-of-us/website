@@ -14,7 +14,11 @@
                     </div><!--//foooter-col-->  
                     <div class="footer-col links col-md-2 col-sm-4 col-xs-12">
                         <div class="footer-col-inner">
-                            <!--<a class="btn btn-cta btn-cta-footer" href="/about">About Us</a>-->
+                            <a class="btn btn-cta btn-cta-footer" href="/about">About Us</a>
+                        </div><!--//footer-col-inner-->
+                    </div><!--//foooter-col--> 
+                    <div class="footer-col links col-md-2 col-sm-4 col-xs-12">
+                        <div class="footer-col-inner">
                             <a class="btn btn-cta btn-cta-footer" href="/privacy">Privacy Policy</a>
                         </div><!--//footer-col-inner-->
                     </div><!--//foooter-col-->    
@@ -26,7 +30,7 @@
                     </div><!--//foooter-col-->       
                        
                     
-                    <div class="footer-col connect col-xs-12 col-md-6">
+                    <div class="footer-col connect col-xs-12 col-md-4">
                         <div class="footer-col-inner">
                             <ul class="social list-inline">
                                 <li><a href="https://twitter.com/1beautifulwall" target="_blank"><i class="fa fa-twitter"></i></a></li>
