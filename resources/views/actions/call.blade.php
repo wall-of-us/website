@@ -55,7 +55,7 @@
 
 <tr>
   <td>@if (isset($senator_2->first_name)) <a href="/reps/{{ $senator_2->slug }}">{{ $senator_2->first_name }} {{ $senator_2->middle_name }} {{ $senator_2->last_name }}</a> @endif</td>
-  <td>{{ $senator_1->phone }}</td>
+  <td>{{ $senator_2->phone }}</td>
   @if (isset($post->script))
   <td>
 
