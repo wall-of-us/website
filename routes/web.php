@@ -17,7 +17,7 @@ Route::get('/home', 'PostsController@index')->name('home');
 
 Route::get('/about', 'PostsController@about');
 
-Route::get('/bluewave', 'PostsController@bluewave');
+Route::get('/campusbluewave18', 'PostsController@bluewave');
 
 Route::get('/privacy', 'PostsController@privacy');
 
