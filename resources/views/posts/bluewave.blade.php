@@ -8,7 +8,7 @@
     <section id="why" class="section why">
             
         <div class="container" style="padding-top: 60px; padding-bottom: 60px; text-align: center;">
-            <img src="/uploads/about/bluewave.png" width="500" style=" padding-bottom: 20px;">
+            <img src="/uploads/about/bluewave.png" width="500" style="padding-bottom: 20px;" >
             	<div class="blog-entry-content" style="text-align: left; padding-top: 20px;">
 
             		<p style="text-align: center;  padding-bottom: 20px;"><img src="/uploads/about/photo1.jpg" width="250"><img src="/uploads/about/photo2.jpg" width="250"><img src="/uploads/about/photo3.jpg" width="250"><img src="/uploads/about/photo4.jpg" width="250"></p>
@@ -23,12 +23,13 @@
 
             			<blockquote>"For far too long our elected officials have taken the youth vote for granted, however, now exceeding the baby boomers we represent the largest voting bloc in the country and it is time to send a clear message to the Florida Legislature and our representatives in Washington D.C. We will show them, with the power of our vote, that we are no longer standing idle inaction on issues that put our lives at risk. We are motivated and we are mobilizing for change!  In these dark days, our voices will be heard- on every campus and in every community, WE WILL VOTE!" <em>- Justin T. Atkins, President, Florida College Democrats, National Council Chair, College Democrats of America</em></blockquote>
 
-            			<p>#CampusBlueWave is led by Florida High School Democrats, Florida College Democrats, and Florida Youth Democrats. Our aim is to keep growing the blue wave across campuses in Florida through a voter pledge and registration drive. Visit this page often for updates and ride the wave to victory with us this November! &nbsp;</p><br>
+            			<p>#CampusBlueWave is led by <a href="https://www.facebook.com/flhighschooldems/" target="_blank">Florida High School Democrats</a>, <a href="https://www.facebook.com/FLcollegedems/" target="_blank">Florida College Democrats</a>, and <a href="https://www.facebook.com/ElectFYD/" target="_blank">Florida Youth Democrats</a>. Our aim is to keep growing the blue wave across campuses in Florida through a voter pledge and registration drive. Visit this page often for updates and ride the wave to victory with us this November! &nbsp;</p><br>
+
             		</p>
 
 
 
-            		<p align="center"><a href="" class="btn btn-primary" style="font-size: 24px; background-color: #2257c5;">Donate</a>
+            		<p align="center"><a href="https://secure.actblue.com/donate/campusbluewave" class="btn btn-primary" style="font-size: 24px; background-color: #2257c5;">Donate</a>
 
 
 
