@@ -1,4 +1,4 @@
-@extends ('layouts.bricks')
+@extends ('layouts.bluewave')
 
 
 @section ('content')
