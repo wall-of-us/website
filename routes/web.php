@@ -17,6 +17,8 @@ Route::get('/home', 'PostsController@index')->name('home');
 
 Route::get('/about', 'PostsController@about');
 
+Route::get('/bluewave', 'PostsController@bluewave');
+
 Route::get('/privacy', 'PostsController@privacy');
 
 Route::get('/ceos', 'PostsController@ceos');
@@ -26,6 +28,8 @@ Route::get('/actions', 'PostsController@actions');
 Route::post('/actions', 'PostsController@actionTaken');
 
 Route::get('/archive', 'PostsController@archive');
+
+Route::get('/json', 'PostsController@json');
 
 Route::get('/bricks', 'PostsController@bricks');
 
