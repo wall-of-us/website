@@ -31,6 +31,11 @@ class PostsController extends Controller
 			$post = 'About';
 			return view('posts.about', compact('post'));
 		}
+	public function bluewave()
+		{
+			$url = \Request::url();
+			return view('posts.bluewave', compact('url'));
+		}
 	
 	public function privacy()
 		{
@@ -64,6 +69,7 @@ class PostsController extends Controller
 		{
 			$pageType = "Weekly Acts";
 			$posts = Post::orderBy('week', 'DESC')->orderBy('action', 'asc')->where('week', '<=', date('Y-m-d'))->get();
+
 			$url = \Request::url();
 			
 			$count = Post::count();
@@ -76,6 +82,13 @@ class PostsController extends Controller
 			
 			return view('posts.archive', compact('posts', 'archive', 'counter', 'url'), ['title' => $pageType]);
 		}
+	public function json()
+		{	
+			$posts = Post::orderBy('week', 'DESC')->orderBy('action', 'asc')->get();
+			$json = json_decode($posts); 
+			
+			return view('posts.json', compact('json'));
+		}	
 	public function bricks()
 		{
 			$pageType = "Brick by Brick";
