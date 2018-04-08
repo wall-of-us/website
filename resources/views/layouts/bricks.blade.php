@@ -75,7 +75,7 @@
                         <ul class="nav navbar-nav">
                             <li class="nav-item"><a href="/">Home</a></li>
 						<li class="nav-item"><a href="/actions">Weekly Acts</a></li>
-						<li class="nav-item"><a href="/bricks">Brick-by-brick</a></li>
+						<li class="nav-item"><a href="/campusbluewave18">Campus Blue Wave</a></li>
                         <!--<li class="nav-item"><a href="/about">About Us</a></li>-->
 						@if (Auth::check())
 						
