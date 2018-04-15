@@ -30,11 +30,16 @@ class ProfileController extends Controller
         $user_zip = \Auth::user()->zip;
         $clean_address = str_replace(array('#','.'), '', $user_address);
         $clean_address = substr($clean_address, 0, strpos($clean_address, ','));
+
         
         $clean_city = str_replace(array('#','.'), '', $user_city);
         
-            
-        $url = "https://www.googleapis.com/civicinfo/v2/representatives?address=" . $clean_address . $clean_city . $user_state . $user_zip . "&includeOffices=true&key=". $_ENV['CIVIC_API_KEY'];
+        if ($clean_address != "") {
+        $url = "https://www.googleapis.com/civicinfo/v2/representatives?address=" . $clean_address . "%20" .$clean_city . "%20" .$user_state . "%20" .$user_zip . "&includeOffices=true&key=". $_ENV['CIVIC_API_KEY'];
+        } else {
+        $url = "https://www.googleapis.com/civicinfo/v2/representatives?address=" . $user_address . "%20" .$clean_city . "%20" .$user_state . "%20" .$user_zip . "&includeOffices=true&key=". $_ENV['CIVIC_API_KEY'];
+        }
+        
         
         $client = new Client();
 
@@ -85,20 +90,22 @@ class ProfileController extends Controller
         
         $userid = \Auth::user()->id;
         $membersince = \Auth::user()->created_at->toDateTimeString();
-       
+        
+        $allactions = \DB::table('actions')->get();
 
         $actions = \DB::table('actions')->where('user_id', '=', $userid)->get();
+
         $action_count = $actions->count();   
 
         $one_week_ago = \Carbon\Carbon::now()->subWeeks(1);
-        $newactions = \DB::table('actions')->where('user_id', '=', $userid)->where('created_at', '>=', '2017-08-20 12:00:00')->get();
+        $newactions = \DB::table('actions')->where('user_id', '=', $userid)->where('created_at', '>=', '2018-04-15 12:00:00')->get(); 
         $newaction_count = $newactions->count(); 
         if ($newaction_count > '4')
         $newaction_count = '4';  
         $leftthisweek = 4 - $newaction_count;
         $counter = 0;
         
-        return view('sessions.profile', compact('user', 'response', 'action_count', 'newaction_count', 'membersince', 'leftthisweek', 'positions', 'counter', 'profile_url', 'governor_slug'));
+        return view('sessions.profile', compact('user', 'clean_address', 'response', 'action_count', 'allactions', 'newaction_count', 'membersince', 'leftthisweek', 'positions', 'counter', 'profile_url', 'governor_slug'));
     
     }
     public function show($id)
