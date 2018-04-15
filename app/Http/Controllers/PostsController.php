@@ -130,7 +130,7 @@ class PostsController extends Controller
 
 		        
 		        //first find out who there reps are
-		        $url = "https://www.googleapis.com/civicinfo/v2/representatives?address=" . $clean_address . $user_city . $user_state . $user_zip . "&levels=country&roles=legislatorUpperBody&key=". $_ENV['CIVIC_API_KEY'];
+		        $url = "https://www.googleapis.com/civicinfo/v2/representatives?address=" . $clean_address . "%20" .$user_city . "%20" .$user_state . "%20" . $user_zip . "&levels=country&roles=legislatorUpperBody&key=". $_ENV['CIVIC_API_KEY'];
 		        $client = new Client();
 		        try {
 		        $response = $client->request('GET', $url);
