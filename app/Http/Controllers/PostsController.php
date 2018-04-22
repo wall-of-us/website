@@ -213,7 +213,7 @@ class PostsController extends Controller
 			    }
 			    
 			    //dd($positions);
-			    $url3 = "https://www.googleapis.com/civicinfo/v2/representatives?address=" . $clean_address . $user_city . $user_state . $user_zip . "&levels=country&roles=legislatorLowerBody&key=". $_ENV['CIVIC_API_KEY'];
+			    $url3 = "https://www.googleapis.com/civicinfo/v2/representatives?address=" . $clean_address . "%20" .$user_city . "%20" .$user_state . "%20" . $user_zip . "&levels=country&roles=legislatorLowerBody&key=". $_ENV['CIVIC_API_KEY'];
 		        $client = new Client();
 
 		        try {
